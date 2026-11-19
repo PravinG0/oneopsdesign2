@@ -1,0 +1,1047 @@
+/* =========================================================================
+   CROJUNGLE &mdash; 1:1 REPLICATION STYLESHEET (PIXEL-PERFECT)
+   ========================================================================= */
+
+/* --- Exact Font Declarations --- */
+@font-face {
+  font-family: 'Thunder';
+  src: url('assets/fonts/Thunder-BoldLC.woff2') format('woff2');
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('assets/fonts/ClashGrotesk-400.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Brand Tokens matching crojungle.com exactly --- */
+:root {
+  --color-outer-purple: #231C21;
+  --fill-0: #231C21;      /* Exact royal purple outer bezel */
+  --color-card-dark: #120E11;          /* Inner card background */
+  --color-nav-bg: #261E24;             /* Top bar background */
+  --color-nav-hover-bg: #3A2E35;
+  
+  --color-purple-cta: #C23B2E;        /* Vibrant brand purple */
+  --color-lime-accent: #C23B2E;       /* Neon lime-yellow highlight */
+  --color-lime-alt: #E07063;
+  
+  --font-thunder: 'Thunder', 'Anton', sans-serif;
+  --font-clash: 'Clash Grotesk', 'Inter', -apple-system, sans-serif;
+  --font-body: 'Clash Grotesk', 'Inter', sans-serif;
+  
+  --ease-cubic: cubic-bezier(0.625, 0.05, 0, 1);
+  --ease-hover: cubic-bezier(0.675, 0.15, 0.1, 1);
+}
+
+/* --- Reset (NO overflow-x: hidden on html/body so position: sticky is NEVER broken) --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--color-outer-purple);
+  color: #ffffff;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =========================================================================
+   TWO-STEP NOTCH NAVIGATION COMPONENT
+   ========================================================================= */
+.twostep-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  font-size: clamp(13px, 1.05vw, 16px);
+}
+
+/* Backdrop Blur (Active when menu is opened) */
+.twostep-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(4, 5, 10, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  transition: opacity 0.4s var(--ease-cubic), visibility 0.4s var(--ease-cubic);
+  z-index: 1;
+}
+
+.twostep-nav[data-nav-status="active"] .twostep-bg {
+  opacity: 1;
+  visibility: visible;
+}
+
+.twostep-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  z-index: 2;
+}
+
+/* Crucial Math: padding-top matches card top minus 19px so it sits flush in notch */
+.twostep-width {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 50em;
+  padding-top: calc(clamp(24px, 2.5vw, 54px) - 19px);
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+
+.twostep-bar {
+  position: relative;
+  width: 100%;
+  max-width: 34em;
+  pointer-events: auto;
+  color: #ffffff;
+  transition: max-width 0.6s var(--ease-cubic) 0.1s;
+}
+
+.twostep-nav[data-nav-status="active"] .twostep-bar {
+  max-width: 100%;
+  transition: max-width 0.4s var(--ease-cubic) 0s;
+}
+
+.twostep-back {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: all 0.4s var(--ease-cubic);
+}
+
+.twostep-nav[data-nav-status="active"] .twostep-back {
+  inset: -0.25em;
+}
+
+.twostep-backBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-nav-bg);
+  border-radius: 1.4em;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Top Bar: Logo | CTA | Toggle */
+.twostep-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 4em;
+  padding: 0.85em 1.2em;
+}
+
+/* Brand Logo (3D Perspective Flip Effect) */
+.twostep-logo {
+  display: grid;
+  place-items: center start;
+  perspective: 10em;
+  margin-left: 0.55em;
+  cursor: pointer;
+}
+
+.twostep-logoWord,
+.twostep-logoMark {
+  grid-area: 1/1;
+  display: flex;
+  align-items: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.twostep-logoWord {
+  transition: transform 0.45s 50ms var(--ease-hover);
+}
+
+.twostep-logoMark {
+  transition: transform 0.4s var(--ease-hover);
+  transform: translateY(65%) rotateX(-85deg) scale(0.525);
+}
+
+/* Scrolled state: 3D flip into compact mark */
+.twostep-nav[data-nav-scrolled="true"] .twostep-logoWord {
+  transform: translateY(-130%) rotateX(85deg) scale(0.525);
+}
+
+.twostep-nav[data-nav-scrolled="true"] .twostep-logoMark {
+  transform: translateY(0) rotateX(0deg) scale(1);
+}
+
+.twostep-logoSvg {
+  height: 1.05em;
+  width: auto;
+  display: block;
+}
+
+.twostep-logoMarkSvg {
+  height: 1.45em;
+  width: auto;
+  display: block;
+}
+
+.twostep-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65em;
+}
+
+/* 3D Flipping BOOK A CALL Button */
+.twostep-barCta {
+  position: relative;
+  display: inline-grid;
+  margin-left: auto;
+  font-family: var(--font-clash);
+  font-size: 0.82em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  outline: none;
+  cursor: pointer;
+}
+
+.twostep-barCtaInner {
+  grid-area: 1/1;
+  display: grid;
+  perspective: 10em;
+  border-radius: 0.7em;
+  overflow: hidden;
+}
+
+.twostep-barCtaBg {
+  grid-area: 1/1;
+  background-color: var(--color-nav-hover-bg);
+  border-radius: 0.7em;
+}
+
+.twostep-barCtaDefault {
+  grid-area: 1/1;
+  display: grid;
+  color: #ffffff;
+  transform-style: preserve-3d;
+  transition: transform 0.45s var(--ease-hover);
+}
+
+.twostep-barCtaDefaultBg {
+  grid-area: 1/1;
+  background-color: var(--color-purple-cta);
+  border-radius: 0.7em;
+}
+
+.twostep-barCtaDefaultText {
+  grid-area: 1/1;
+  padding: 0.85em 1.4em;
+}
+
+.twostep-barCtaHover {
+  grid-area: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transform: translateY(65%) rotateX(-85deg) scale(0.525);
+  transition: transform 0.4s var(--ease-hover);
+}
+
+.twostep-barCtaHover::after {
+  content: attr(data-text);
+  color: #120924;
+  background-color: var(--color-lime-accent);
+  border-radius: 0.7em;
+  padding: 0.85em 1.4em;
+  display: block;
+}
+
+.twostep-barCta:hover .twostep-barCtaHover {
+  transform: translateY(0) rotateX(0deg) scale(1);
+}
+
+.twostep-barCta:hover .twostep-barCtaDefault {
+  transform: translateY(-65%) rotateX(85deg) scale(0.525);
+}
+
+/* In active menu state, CTA switches color to lime */
+.twostep-nav[data-nav-status="active"] .twostep-barCtaDefaultBg {
+  background-color: var(--color-lime-accent);
+}
+
+.twostep-nav[data-nav-status="active"] .twostep-barCtaDefault {
+  color: #120924;
+}
+
+/* Hamburger & Close Toggle Button */
+.twostep-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6em;
+  height: 2.6em;
+  background-color: var(--color-nav-hover-bg);
+  border-radius: 0.55em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.twostep-toggle:hover {
+  background-color: #261b5c;
+}
+
+.twostep-toggleBar {
+  position: absolute;
+  width: 1.55em;
+  height: 0.13em;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.4s var(--ease-cubic), background-color 0.2s ease;
+  transform: translateY(-0.25em);
+}
+
+.twostep-toggleBar:nth-child(2) {
+  transform: translateY(0.18em);
+}
+
+.twostep-toggle:hover .twostep-toggleBar:nth-child(1) {
+  transform: translateY(-0.16em);
+}
+
+.twostep-toggle:hover .twostep-toggleBar:nth-child(2) {
+  transform: translateY(0.12em);
+}
+
+/* Active State turns bars into X and changes color to lime */
+.twostep-nav[data-nav-status="active"] .twostep-toggle .twostep-toggleBar {
+  background-color: var(--color-lime-accent);
+  transform: translateY(0) rotate(45deg);
+}
+
+.twostep-nav[data-nav-status="active"] .twostep-toggle .twostep-toggleBar:nth-child(2) {
+  transform: translateY(0) rotate(-45deg);
+}
+
+/* Divider Line between top bar and dropdown */
+.twostep-topLine {
+  position: absolute;
+  bottom: 0;
+  left: 0.6em;
+  right: 0.6em;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.12);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.twostep-nav[data-nav-status="active"] .twostep-topLine {
+  opacity: 1;
+}
+
+/* Expanded Dropdown Body */
+.twostep-bottom {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.4s var(--ease-cubic);
+  z-index: 2;
+}
+
+.twostep-nav[data-nav-status="active"] .twostep-bottom {
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.6s var(--ease-cubic) 0.15s;
+}
+
+.twostep-bottomOverflow {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.twostep-bottomInner {
+  padding: 1.8em 1.6em 1.6em;
+}
+
+.twostep-bottomRow {
+  display: flex;
+  gap: 2.2em;
+}
+
+.twostep-bottomCol {
+  flex: 1;
+}
+
+/* Menu Links Column */
+.twostep-ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.twostep-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.1em 0;
+  color: #ffffff;
+}
+
+.twostep-linkSpan {
+  font-family: var(--font-thunder);
+  font-size: 3.2em;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  transition: color 0.25s ease;
+}
+
+.twostep-link:hover .twostep-linkSpan {
+  color: var(--color-lime-accent);
+}
+
+.nav-pill-badge {
+  font-family: var(--font-clash);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.nav-arr {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-left: auto;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.twostep-link:hover .nav-arr {
+  color: var(--color-lime-accent);
+  transform: translateX(3px);
+}
+
+.twostep-small {
+  display: flex;
+  gap: 1.2em;
+  margin-top: 1.8em;
+  padding-top: 1.2em;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.social-link {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.2s ease;
+}
+
+.social-link:hover {
+  color: #ffffff;
+}
+
+/* Right Featured Card in Menu (Brand OS Preview) */
+.menu-product-card {
+  background: linear-gradient(145deg, #18221b 0%, #101918 40%, #0d121c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.2em;
+  padding: 1.4em;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.product-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.product-eyebrow strong {
+  color: #ffffff;
+}
+
+.product-learn-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.72rem;
+  color: #ffffff;
+  transition: background 0.2s ease;
+}
+
+.product-learn-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.product-title-row {
+  margin-bottom: 1.2em;
+}
+
+.product-name {
+  font-family: var(--font-clash);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.product-name span {
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 1px 6px;
+  background: var(--color-lime-accent);
+  color: #120924;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.product-tagline {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 2px;
+}
+
+.preview-mockup {
+  background: #120f21;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.mockup-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mock-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-lime-accent);
+}
+
+.mock-pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mockup-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mockup-colors {
+  display: flex;
+  gap: 4px;
+}
+
+.mockup-colors span {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+.mockup-ai-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(199, 245, 69, 0.15);
+  border: 1px solid rgba(199, 245, 69, 0.3);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--color-lime-accent);
+}
+
+
+/* =========================================================================
+   SCROLLYTELLING HERO SECTION (100% FIXED & PINNED)
+   ========================================================================= */
+.hero-hero {
+  position: relative;
+  width: 100%;
+  height: 300vh;
+  background-color: var(--color-outer-purple);
+}
+
+/* The Stage sticks firmly to the viewport as you scroll */
+.hero-stage {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  padding-block: clamp(24px, 2.5vw, 54px);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Card Bezel (Matching crojungle.com) */
+.hero-card {
+  isolation: isolate;
+  background: var(--color-card-dark);
+  border-radius: 35px;
+  width: 95%;
+  max-width: 1900px;
+  height: 100%;
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 30px 90px rgba(0, 0, 0, 0.6);
+}
+
+/* Dual Background: Video + Canvas */
+.hero-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+  display: block;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  z-index: 2;
+  will-change: transform;
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(6, 8, 14, 0.7) 0%, rgba(6, 8, 14, 0.15) 38%, rgba(6, 8, 14, 0) 62%),
+              linear-gradient(rgba(6, 8, 14, 0) 70%, rgba(6, 8, 14, 0.6) 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* SVG Cutout Notch (Union.svg) */
+.hero-notch {
+  z-index: 4;
+  pointer-events: none;
+  width: 760px;
+  height: 56px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
+
+/* =========================================================================
+   STAGE OVERLAYS (Scroll Choreography)
+   ========================================================================= */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.overlay-phase {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s var(--ease-cubic);
+}
+
+.overlay-phase a,
+.overlay-phase button,
+.overlay-phase aside {
+  pointer-events: auto;
+}
+
+/* =========================================================================
+   PHASE 1: HERO STATE
+   ========================================================================= */
+.phase-hero {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 3 Laurels in Top-Left (Exact Coordinates) */
+.hero-badges {
+  gap: clamp(10px, 1.1vw, 16px);
+  display: flex;
+  position: absolute;
+  top: 18%;
+  left: 4.7%;
+  z-index: 5;
+}
+
+.hero-badge {
+  align-items: center;
+  gap: clamp(6px, 0.7vw, 10px);
+  display: flex;
+}
+
+.hero-laurel {
+  flex: none;
+  width: clamp(13px, 1.1vw, 16px);
+  height: clamp(16px, 1.4vw, 20px);
+}
+
+.hero-laurelFlip {
+  transform: scaleX(-1);
+}
+
+.hero-badgeText {
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  font-family: var(--font-thunder);
+  font-size: clamp(11px, 1.1vw, 16px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero-badgeText em {
+  font-style: normal;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Giant Headline */
+.hero-headline {
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: var(--font-thunder);
+  font-size: min(clamp(54px, 12.3vw, 181px), 21vh);
+  font-weight: 700;
+  line-height: 0.82;
+  position: absolute;
+  bottom: 6.5%;
+  left: 4.7%;
+  z-index: 5;
+}
+
+.hero-line {
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+}
+
+.hero-fill {
+  color: #ffffff;
+  display: inline-block;
+  padding-top: 8px;
+}
+
+.hero-king {
+  display: inline-block;
+  position: relative;
+}
+
+.king-period {
+  color: var(--color-lime-accent);
+}
+
+/* Lime Marker Underline */
+.hero-underlineWrap {
+  pointer-events: none;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: clamp(14px, 2.2vw, 32px);
+  z-index: -1;
+}
+
+.hero-underline {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* Floating Bottom-Right Card (What's New) */
+.hero-videoWrap {
+  z-index: 6;
+  width: min(23.4%, 440px);
+  min-width: 240px;
+  position: absolute;
+  bottom: 7.5vh;
+  right: max(4.7%, calc(50% - 902.5px));
+}
+
+.hero-videoHead {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-left: 4px;
+  font-family: var(--font-clash);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+}
+
+.hero-dot {
+  background: var(--color-lime-accent);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 10px rgba(199, 245, 69, 0.8);
+}
+
+.hero-videoCard {
+  aspect-ratio: 340/163;
+  border-radius: 21px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(11, 5, 38, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.hero-videoOverlay {
+  background: radial-gradient(120% 120% at 15% 95%, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.2) 55%, transparent 80%);
+  position: absolute;
+  inset: 0;
+}
+
+.hero-videoLabel {
+  position: absolute;
+  bottom: 14px;
+  left: 18px;
+  color: #ffffff;
+}
+
+.card-logo-mini {
+  font-family: var(--font-thunder);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-lime-accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.hero-videoLabel strong {
+  font-family: var(--font-thunder);
+  font-size: clamp(20px, 2.2vw, 32px);
+  font-weight: 700;
+  line-height: 0.9;
+  text-transform: uppercase;
+  display: block;
+}
+
+.hero-watchBtn {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #070314;
+  border-radius: 999px;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-family: var(--font-clash);
+  font-size: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-watchBtn:hover {
+  background: var(--color-lime-accent);
+  transform: scale(1.05);
+}
+
+.hero-play {
+  border: 4px solid transparent;
+  border-left: 7px solid #070314;
+  border-right-width: 0;
+  width: 0;
+  height: 0;
+}
+
+
+/* =========================================================================
+   PHASE 2: SCROLL-REVEALED IMPACT STATEMENT (Locked in Center)
+   ========================================================================= */
+.hero-centerText {
+  z-index: 6;
+  text-align: center;
+  opacity: 0;
+  width: min(86%, 1100px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s var(--ease-cubic);
+}
+
+.hero-centerText::before {
+  content: "";
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(42% 38%, rgba(6, 8, 14, 0.72) 0%, rgba(6, 8, 14, 0.45) 46%, transparent 72%);
+  width: 150vw;
+  height: 115vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-centerHeadline {
+  letter-spacing: -0.012em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  font-family: var(--font-thunder);
+  font-size: clamp(42px, 6.8vw, 98px);
+  font-weight: 800;
+  line-height: 0.95;
+}
+
+.hero-accent {
+  color: var(--color-lime-accent);
+  text-shadow: 0 0 35px rgba(199, 245, 69, 0.5);
+}
+
+.hero-centerSub {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
+  max-width: 44ch;
+  margin: 1.2em auto 0;
+  font-family: var(--font-clash);
+  font-size: clamp(17px, 1.6vw, 24px);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+
+/* =========================================================================
+   BOTTOM PROGRESS TRACK
+   ========================================================================= */
+.stage-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 25;
+}
+
+.stage-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-purple-cta) 0%, var(--color-lime-accent) 100%);
+  transition: width 0.05s linear;
+}
+
+
+/* =========================================================================
+   RESPONSIVE QUERIES
+   ========================================================================= */
+@media (max-width: 900px) {
+  .hero-notch {
+    display: none;
+  }
+  
+  .twostep-bottomRow {
+    flex-direction: column;
+  }
+  
+  .hero-badges {
+    top: 75px;
+  }
+  
+  .hero-videoWrap {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-badges {
+    display: none;
+  }
+  
+  .hero-headline {
+    bottom: 4%;
+    left: 4%;
+  }
+}

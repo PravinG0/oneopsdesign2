@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OneOps &mdash; Enterprise AI Governance Platform</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cro-body">
+
+  <!-- =========================================================================
+       TWO-STEP NOTCH NAVIGATION (FIXED OVERLAY)
+       ========================================================================= -->
+  <nav class="twostep-nav" id="twostep-nav" data-nav-status="closed" data-nav-scrolled="false" aria-label="Main Navigation">
+    <!-- Backdrop Blur Overlay -->
+    <div class="twostep-bg" id="nav-backdrop" aria-hidden="true"></div>
+
+    <div class="twostep-wrap">
+      <div class="twostep-width">
+        <div class="twostep-bar">
+          <div class="twostep-back">
+            <div class="twostep-backBg"></div>
+          </div>
+
+          <!-- Top Row: Logo | BOOK A DEMO | Hamburger -->
+          <div class="twostep-top">
+            <!-- Brand Logo (3D Perspective Flip between Word & Mark on scroll) -->
+            <a href="#top" class="twostep-logo" aria-label="OneOps Home">
+              <span class="twostep-logoWord">
+                <img src="assets/hero/oneops-logo.png" alt="OneOps" class="twostep-logoSvg" style="height: 34px; width: auto; object-fit: contain;">
+              </span>
+              <span class="twostep-logoMark" aria-hidden="true">
+                <img src="assets/hero/oneops-logo.png" alt="OneOps" class="twostep-logoMarkSvg" style="height: 28px; width: auto; object-fit: contain;">
+              </span>
+            </a>
+
+            <!-- Right Controls -->
+            <div class="twostep-actions">
+              <a href="#contact" class="twostep-barCta" data-text="BOOK A DEMO">
+                <span class="twostep-barCtaInner">
+                  <span class="twostep-barCtaBg" style="background: #C23B2E;"></span>
+                  <span class="twostep-barCtaDefault">
+                    <span class="twostep-barCtaDefaultBg" style="background: #C23B2E;"></span>
+                    <span class="twostep-barCtaDefaultText">BOOK A DEMO</span>
+                  </span>
+                  <span class="twostep-barCtaHover" data-text="BOOK A DEMO"></span>
+                </span>
+              </a>
+
+              <!-- Hamburger / Close Toggle Button -->
+              <button class="twostep-toggle" id="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="twostep-toggleBar"></span>
+                <span class="twostep-toggleBar"></span>
+              </button>
+            </div>
+          </div><!-- /twostep-top -->
+
+          <div class="twostep-topLine" aria-hidden="true"></div>
+
+          <!-- Expanded Dropdown Menu -->
+          <div class="twostep-bottom" id="nav-dropdown">
+            <div class="twostep-bottomOverflow">
+              <div class="twostep-bottomInner">
+                <div class="twostep-bottomRow">
+                  
+                  <!-- Left: Links Column -->
+                  <div class="twostep-bottomCol">
+                    <div class="twostep-info">
+                      <ul class="twostep-ul">
+                        <li class="twostep-li">
+                          <a href="#top" class="twostep-link">
+                            <span class="twostep-linkSpan">HOME</span>
+                          </a>
+                        </li>
+                        <li class="twostep-li">
+                          <a href="#rules-track" class="twostep-link">
+                            <span class="twostep-linkSpan">CAPABILITIES</span>
+                            <span class="nav-pill-badge" style="background: rgba(194, 59, 46, 0.2); color: #E07063;">CORE</span>
+                            <span class="nav-arr">&rsaquo;</span>
+                          </a>
+                        </li>
+                        <li class="twostep-li">
+                          <a href="#features" class="twostep-link">
+                            <span class="twostep-linkSpan">ROTARY ROADMAP</span>
+                            <span class="nav-pill-badge" style="background: rgba(194, 59, 46, 0.2); color: #E07063;">AI OS</span>
+                            <span class="nav-arr">&rsaquo;</span>
+                          </a>
+                        </li>
+                        <li class="twostep-li">
+                          <a href="#how-it-works" class="twostep-link">
+                            <span class="twostep-linkSpan">HOW IT WORKS</span>
+                          </a>
+                        </li>
+                        <li class="twostep-li">
+                          <a href="#pricing" class="twostep-link">
+                            <span class="twostep-linkSpan">PRICING</span>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <div class="twostep-small">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
+                        <a href="https://x.com" target="_blank" rel="noopener" class="social-link">X / Twitter</a>
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-link">GitHub</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Right: Sophia AI Preview Card -->
+                  <div class="twostep-bottomCol">
+                    <aside class="menu-product-card" style="border-color: rgba(194, 59, 46, 0.3);">
+                      <div class="product-badge-row">
+                        <span class="product-eyebrow">INTELLIGENT AI OPERATIONS ASSISTANT</span>
+                        <a href="#features" class="product-learn-btn" style="color: #E07063;">
+                          <span>Learn More</span>
+                          <span class="arr">&rarr;</span>
+                        </a>
+                      </div>
+
+                      <div class="product-title-row">
+                        <h3 class="product-name">Sophia <span>AI</span></h3>
+                        <p class="product-tagline">Detect &bull; Alert &bull; Optimize</p>
+                      </div>
+
+                      <div class="preview-mockup" style="background: #181216;">
+                        <div class="mockup-header">
+                          <span class="mock-dot" style="background: #C23B2E;"></span>
+                          <span class="mock-pill" style="color: #E07063;">BUDGET BURN: 82%</span>
+                        </div>
+                        <div class="mockup-content">
+                          <div class="mockup-colors" style="display:flex; gap:6px;">
+                            <span style="background: #C23B2E; width:14px; height:14px; border-radius:50%;"></span>
+                            <span style="background: #7A5C6E; width:14px; height:14px; border-radius:50%;"></span>
+                            <span style="background: #D4857A; width:14px; height:14px; border-radius:50%;"></span>
+                          </div>
+                          <div class="mockup-ai-btn" style="color: #F7F3F1;">
+                            <span class="ai-sparkle" style="color:#C23B2E;">&#10024;</span>
+                            <span>Total Spend: $8,240 (4 Teams)</span>
+                          </div>
+                        </div>
+                      </div>
+                    </aside>
+                  </div>
+
+                </div><!-- /twostep-bottomRow -->
+              </div>
+            </div>
+          </div><!-- /twostep-bottom -->
+        </div><!-- /twostep-bar -->
+      </div>
+    </div>
+  </nav><!-- /twostep-nav -->
+
+
+  <!-- =========================================================================
+       PINNED SCROLLYTELLING HERO SECTION (300vh Scroll Track)
+       ========================================================================= -->
+  <section class="hero-hero" id="hero-track">
+    <div class="hero-stage" id="hero-stage">
+
+      <!-- Viewport Card (95% width, max 1900px, 35px border radius) -->
+      <div class="hero-card" id="top">
+
+        <!-- Background Video & Canvas -->
+        <video id="hero-bg-video" class="hero-bg-video" src="assets/hero-video.mp4" autoplay loop muted playsinline preload="auto"></video>
+        <canvas id="hero-canvas" class="hero-canvas" aria-label="3D Scrollytelling Sequence"></canvas>
+        <div class="hero-vignette" aria-hidden="true"></div>
+
+        <!-- The Exact SVG Notch Cutout sitting flush at the top -->
+        <img src="assets/hero/union.svg" alt="" class="hero-notch" aria-hidden="true">
+
+        <!-- ===================================================================
+             CONTENT OVERLAYS (Phase 1 Hero & Phase 2 Impact)
+             =================================================================== -->
+        <div class="hero-content">
+
+          <!-- PHASE 1: INITIAL HERO STATE -->
+          <div class="overlay-phase phase-hero" id="phase-hero">
+
+            <!-- 3 Laurel Badges (Top-Left) -->
+            <div class="hero-badges" aria-label="Governance Standards">
+              <div class="hero-badge">
+                <img src="assets/hero/laurel-l1.svg" class="hero-laurel" alt="" aria-hidden="true">
+                <span class="hero-badgeText">
+                  <em>2026</em>ENTERPRISE<br>READY
+                </span>
+                <img src="assets/hero/laurel-l1.svg" class="hero-laurel hero-laurelFlip" alt="" aria-hidden="true">
+              </div>
+
+              <div class="hero-badge">
+                <img src="assets/hero/laurel-l2.svg" class="hero-laurel" alt="" aria-hidden="true">
+                <span class="hero-badgeText">
+                  <em>40+</em>AI PROVIDER<br>KEY VAULT
+                </span>
+                <img src="assets/hero/laurel-l2.svg" class="hero-laurel hero-laurelFlip" alt="" aria-hidden="true">
+              </div>
+
+              <div class="hero-badge">
+                <img src="assets/hero/laurel-l3.svg" class="hero-laurel" alt="" aria-hidden="true">
+                <span class="hero-badgeText">
+                  <em>SOC2</em>HIPAA & GDPR<br>AUDIT LOGS
+                </span>
+                <img src="assets/hero/laurel-l3.svg" class="hero-laurel hero-laurelFlip" alt="" aria-hidden="true">
+              </div>
+            </div>
+
+            <!-- Giant Headline with Crimson Underline -->
+            <h1 class="hero-headline">
+              <span class="hero-line">
+                <span class="hero-fill">EVERY AI KEY.</span>
+              </span>
+              <span class="hero-line">
+                <span class="hero-fill">EVERY TEAM.</span>
+              </span>
+              <span class="hero-line">
+                <span class="hero-fill">
+                  <span class="hero-king">
+                    ONE PLATFORM
+                    <!-- Exact Marker Underline styled in Brand Crimson -->
+                    <span class="hero-underlineWrap" aria-hidden="true">
+                      <svg class="hero-underline" viewBox="0 0 310 40" fill="none" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="kingUnderline" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0%" stop-color="#C23B2E"/>
+                            <stop offset="60%" stop-color="#E07063"/>
+                            <stop offset="100%" stop-color="#7A5C6E"/>
+                          </linearGradient>
+                        </defs>
+                        <path d="M17.0039 32.6826C32.2307 32.8412 47.4552 32.8277 62.676 32.8118C67.3044 32.807 96.546 33.0555 104.728 32.0775C113.615 31.0152 104.516 28.3028 102.022 27.2826C89.9573 22.3465 77.3751 19.0254 65.0451 15.0552C57.8987 12.7542 37.2813 8.49399 44.2314 6.10216C50.9667 3.78422 64.2873 5.81914 70.4249 5.96641C105.866 6.81677 141.306 7.58809 176.75 8.59886C217.874 9.77162 258.906 11.0553 300 14.4892 L313.5 15.6" stroke="url(#kingUnderline)" stroke-width="12" stroke-linecap="round"/>
+                      </svg>
+                    </span>
+                  </span><span class="king-period" style="color: #C23B2E;">.</span>
+                </span>
+              </span>
+            </h1>
+
+            <!-- Floating Feature Card (Bottom-Right) -->
+            <aside class="hero-videoWrap" aria-label="What's New in OneOps">
+              <div class="hero-videoHead">
+                <span class="hero-dot" aria-hidden="true" style="background: #C23B2E;"></span>
+                <span>WHAT'S NEW?</span>
+              </div>
+              <div class="hero-videoCard">
+                <div class="hero-videoOverlay"></div>
+                <div class="hero-videoLabel">
+                  <span class="card-logo-mini" style="color: #E07063;">OneOps Pro</span>
+                  <strong>PRE-LLM REAL-TIME<br>DLP GUARDRAILS</strong>
+                </div>
+                <a href="#rules-track" class="hero-watchBtn" style="background: #C23B2E;">
+                  <span class="hero-play" aria-hidden="true"></span>
+                  <span>SEE HOW IT WORKS</span>
+                </a>
+              </div>
+            </aside>
+
+          </div><!-- /phase-hero -->
+
+
+          <!-- PHASE 2: SCROLL-REVEALED IMPACT STATEMENT (Locked in Center) -->
+          <div class="hero-centerText" id="phase-impact">
+            <h2 class="hero-centerHeadline">
+              YOUR TEAMS ARE USING 12+ AI TOOLS.<br>
+              <span class="hero-accent" style="color: #E07063;">WHO AUTHORIZED HALF OF THEM?</span>
+            </h2>
+            <p class="hero-centerSub">
+              API keys in Slack, $14,000 month-end invoice shock, and zero offboarding visibility.
+              OneOps gives CTOs, Security, and Finance complete control plane governance with hard budget caps, per-person attribution, and pre-LLM DLP guardrails.
+            </p>
+          </div>
+
+        </div><!-- /hero-content -->
+
+        <!-- Bottom Linear Progress Bar -->
+        <div class="stage-progress-bar" aria-hidden="true">
+          <div class="stage-progress-fill" id="progress-indicator" style="background: #C23B2E;"></div>
+        </div>
+
+      </div><!-- /hero-card -->
+    </div><!-- /hero-stage -->
+  </section><!-- /hero-hero -->
+
+  <script src="app.js"></script>
+</body>
+</html>

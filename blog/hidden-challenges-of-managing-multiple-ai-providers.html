@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hidden Challenges of Managing Multiple AI Providers | OneOps</title>
+  <meta name="description" content="Discover the hidden challenges of managing multiple AI providers and learn how Enterprise AI Governance and AI API key management improve control.">
+  <meta name="theme-color" content="#C33A2E">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hidden Challenges of Managing Multiple AI Providers">
+  <meta property="og:description" content="Discover the hidden challenges of managing multiple AI providers and learn how Enterprise AI Governance and AI API key management improve control.">
+  <meta property="og:image" content="../img/blog-2-multi-provider.webp">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Hidden Challenges of Managing Multiple AI Providers",
+    "description": "Discover the hidden challenges of managing multiple AI providers and learn how Enterprise AI Governance and AI API key management improve control.",
+    "image": "https://oneops.pro/img/blog-2-multi-provider.webp",
+    "datePublished": "2026-08-08",
+    "dateModified": "2026-08-08",
+    "author": {
+      "@type": "Organization",
+      "name": "OneOps Team",
+      "url": "https://oneops.pro/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OneOps",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://oneops.pro/img/oneops-logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://oneops.pro/blog/hidden-challenges-of-managing-multiple-ai-providers.html"
+    },
+    "articleSection": "Operations"
+  }
+  </script>
+</head>
+<body>
+<div class="read-progress"></div>
+<div class="announce">
+  <span class="tag">NEW</span><span class="hide-sm">Sophia AI now answers spend &amp; usage questions in plain English. </span><a href="../index.html#beyond">See what's new <span aria-hidden="true">→</span></a>
+</div>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="../index.html" aria-label="OneOps home">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L90 27 L90 60 L50 60 Z" fill="#D5857A"/><path d="M50 4 L10 27 L10 60 L50 60 Z" fill="#C33A2E"/><path d="M10 60 L50 60 L90 60 L90 73 L50 96 L10 73 Z" fill="#7A5C6E"/><path d="M10 60 L50 82 L90 60" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1.5"/></svg>
+      <span>ONE</span><b>OPS</b>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../features.html">Features</a>
+      <a href="../index.html#compare">Compare</a>
+      <a href="../index.html#pricing">Pricing</a>
+      <a href="../blog.html" class="active" aria-current="page">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="login" href="https://app.oneops.pro">Log in</a>
+      <button class="btn btn-primary btn-sm" data-open-demo>Book a demo</button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main>
+  <header class="article-hero container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../blog.html">Blog</a><span aria-hidden="true">/</span><span>Operations</span></nav>
+    <h1>Hidden Challenges of Managing Multiple AI Providers</h1>
+    <p class="lede">Discover the hidden challenges of managing multiple AI providers and learn how Enterprise AI Governance and AI API key management improve control.</p>
+    <div class="post-meta">
+      <span class="author"><span class="av" style="background:var(--charcoal);border-color:var(--charcoal)"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L90 27 L90 60 L50 60 Z" fill="#fff" fill-opacity=".7"/><path d="M50 4 L10 27 L10 60 L50 60 Z" fill="#fff"/><path d="M10 60 L50 60 L90 60 L90 73 L50 96 L10 73 Z" fill="#fff" fill-opacity=".45"/></svg></span>OneOps Team</span>
+      <span class="sep"></span><time datetime="2026-08-08">Aug 8, 2026</time>
+      <span class="sep"></span><span>6 min read</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <figure class="article-cover"><img src="../img/blog-2-multi-provider.webp" alt="Hidden Challenges of Managing Multiple AI Providers" width="1600" height="800"></figure>
+  </div>
+
+  <div class="article-layout">
+    <aside class="toc">
+      <h4>On this page</h4>
+      <nav aria-label="Table of contents">
+        <a href="#1-lack-of-centralized-visibility">1. Lack of Centralized Visibility</a>
+        <a href="#2-ai-api-key-sprawl-creates-security-risks">2. AI API Key Sprawl Creates Security Risks</a>
+        <a href="#3-ai-costs-become-difficult-to-control">3. AI Costs Become Difficult to Control</a>
+        <a href="#4-inconsistent-governance-across-providers">4. Inconsistent Governance Across Providers</a>
+        <a href="#5-compliance-and-audit-challenges">5. Compliance and Audit Challenges</a>
+        <a href="#6-the-rise-of-shadow-ai">6. The Rise of Shadow AI</a>
+        <a href="#7-operational-complexity-grows-with-scale">7. Operational Complexity Grows with Scale</a>
+        <a href="#why-centralized-ai-management-matters">Why Centralized AI Management Matters</a>
+        <a href="#conclusion">Conclusion</a>
+      </nav>
+      <div class="share">
+        <button type="button" class="btn btn-ghost btn-sm" data-copy-link>Copy link</button>
+      </div>
+    </aside>
+
+    <article class="prose">
+      <p>Artificial intelligence has become a strategic asset for modern enterprises. To meet diverse business needs, organizations are increasingly adopting multiple AI providers such as OpenAI, Anthropic, Google Gemini, Amazon Bedrock, Mistral AI, and Groq. Each provider offers unique capabilities, allowing teams to choose the right model for coding, customer support, content generation, data analysis, and more.</p>
+      <p>While this flexibility accelerates innovation, it also creates a new layer of operational complexity. As organizations manage multiple AI providers, they often struggle with fragmented visibility, inconsistent governance, rising costs, and security risks. Without a centralized approach to Enterprise AI Governance, these hidden challenges can slow AI adoption instead of enabling it.</p>
+      <p>Let’s explore the key challenges enterprises face and why addressing them early is critical for long-term AI success.</p>
+      <h2 id="1-lack-of-centralized-visibility">1. Lack of Centralized Visibility</h2>
+      <p>As different teams adopt different AI providers, organizations lose a unified view of their AI ecosystem. Each provider operates through its own dashboard, billing portal, analytics, and authentication process.</p>
+      <p>This fragmented environment makes it difficult to answer important business questions:</p>
+      <ul>
+        <li>Which AI providers are currently being used?</li>
+        <li>Which teams consume the most AI resources?</li>
+        <li>How much is being spent on each provider?</li>
+        <li>Are there inactive or duplicate subscriptions?</li>
+      </ul>
+      <p>When organizations manage multiple AI providers without centralized visibility, decision-making becomes reactive rather than strategic. Leaders lack the insights needed to optimize AI adoption across the enterprise.</p>
+      <h2 id="2-ai-api-key-sprawl-creates-security-risks">2. AI API Key Sprawl Creates Security Risks</h2>
+      <p>Every AI provider relies on API keys for authentication. As more applications and teams integrate AI, the number of API keys grows rapidly.</p>
+      <p>Unfortunately, many organizations still store API keys in spreadsheets, emails, shared documents, or application code. This decentralized approach increases security risks while making administration difficult.</p>
+      <p>Without proper AI API key management, enterprises often experience:</p>
+      <ul>
+        <li>Shared API keys across multiple users</li>
+        <li>Hardcoded credentials in applications</li>
+        <li>Unused or forgotten API keys</li>
+        <li>Difficulty rotating compromised keys</li>
+        <li>Limited visibility into API key ownership</li>
+      </ul>
+      <p>Effective AI API key management is essential for securing enterprise AI environments while maintaining operational efficiency.</p>
+      <h2 id="3-ai-costs-become-difficult-to-control">3. AI Costs Become Difficult to Control</h2>
+      <p>Every AI provider follows a different pricing model. Some charge based on tokens, while others bill according to requests, images, or compute usage.</p>
+      <p>As organizations manage multiple AI providers, finance teams often struggle to understand where AI budgets are being spent. Without centralized reporting, identifying cost overruns or forecasting future expenses becomes increasingly difficult.</p>
+      <p>Organizations need clear visibility into AI consumption to:</p>
+      <ul>
+        <li>Allocate budgets by team</li>
+        <li>Monitor provider-specific spending</li>
+        <li>Detect unusual usage patterns</li>
+        <li>Optimize AI investments</li>
+      </ul>
+      <p>Without financial transparency, AI spending can quickly exceed expectations.</p>
+      <h2 id="4-inconsistent-governance-across-providers">4. Inconsistent Governance Across Providers</h2>
+      <p>Each AI provider offers different authentication methods, permission structures, and administrative controls. Managing these independently often leads to inconsistent governance policies across the organization.</p>
+      <p>Strong Enterprise AI Governance ensures that AI access, permissions, and usage policies remain consistent regardless of which provider employees use.</p>
+      <p>Without effective governance, organizations risk:</p>
+      <ul>
+        <li>Excessive user permissions</li>
+        <li>Unauthorized AI access</li>
+        <li>Inconsistent policy enforcement</li>
+        <li>Difficulty managing employee onboarding and offboarding</li>
+      </ul>
+      <p>As AI adoption grows, consistent governance becomes just as important as choosing the right AI models.</p>
+      <h2 id="5-compliance-and-audit-challenges">5. Compliance and Audit Challenges</h2>
+      <p>Organizations operating in regulated industries must maintain detailed records of AI usage for compliance and internal audits.</p>
+      <p>However, when logs and reports are distributed across multiple AI providers, collecting accurate audit information becomes a time-consuming process.</p>
+      <p>Questions such as these become difficult to answer:</p>
+      <ul>
+        <li>Who accessed a specific AI provider?</li>
+        <li>Which API keys were used?</li>
+        <li>What departments generated AI requests?</li>
+        <li>Are organizational AI policies being followed?</li>
+      </ul>
+      <p>A comprehensive Enterprise AI Governance strategy helps organizations centralize audit trails, improve accountability, and simplify compliance reporting.</p>
+      <h2 id="6-the-rise-of-shadow-ai">6. The Rise of Shadow AI</h2>
+      <p>Employees often adopt AI tools independently when approved solutions are unavailable or difficult to access. This phenomenon, commonly known as Shadow AI, creates significant governance and security concerns.</p>
+      <p>As organizations manage multiple AI providers, it becomes increasingly difficult to identify unauthorized AI usage across departments.</p>
+      <p>Shadow AI can result in:</p>
+      <ul>
+        <li>Sensitive business information being shared externally</li>
+        <li>Duplicate AI subscriptions</li>
+        <li>Increased compliance risks</li>
+        <li>Reduced visibility into enterprise AI usage</li>
+      </ul>
+      <p>Managing Shadow AI requires organizations to balance innovation with governance rather than restricting AI adoption altogether.</p>
+      <h2 id="7-operational-complexity-grows-with-scale">7. Operational Complexity Grows with Scale</h2>
+      <p>Managing one AI provider is relatively straightforward. Managing several providers simultaneously is far more challenging.</p>
+      <p>IT and engineering teams must oversee multiple billing systems, authentication methods, integrations, dashboards, API credentials, and support processes. Each additional provider introduces new administrative responsibilities.</p>
+      <p>Instead of focusing on innovation, teams spend valuable time maintaining disconnected systems and resolving operational inefficiencies.</p>
+      <p>This complexity highlights the need for a centralized platform capable of helping organizations manage multiple AI providers efficiently from a single interface.</p>
+      <h2 id="why-centralized-ai-management-matters">Why Centralized AI Management Matters</h2>
+      <p>As enterprise AI ecosystems continue to expand, relying on separate tools for each provider is no longer sustainable.</p>
+      <p>Organizations need a unified approach that combines provider visibility, governance, security, analytics, and operational controls in one place. Centralized AI API key management ensures credentials remain secure and manageable, while Enterprise AI Governance establishes consistent policies across all AI providers.</p>
+      <p>By bringing these capabilities together, organizations can reduce operational complexity, improve security, and confidently scale AI initiatives without sacrificing control.</p>
+      <h2 id="conclusion">Conclusion</h2>
+      <p>Using multiple AI providers gives enterprises the flexibility to leverage the strengths of different AI models, but it also introduces challenges that are often overlooked. As organizations manage multiple AI providers, maintaining visibility, controlling costs, securing credentials, and enforcing governance becomes increasingly difficult.</p>
+      <p>Implementing robust Enterprise AI Governance alongside centralized AI API key management enables organizations to overcome these challenges while supporting secure and scalable AI adoption.</p>
+      <p>OneOps helps enterprises centralize AI provider management, simplify AI API key management, and strengthen Enterprise AI Governance through a unified platform. With complete visibility, consistent policy enforcement, and actionable insights, organizations can confidently manage multiple AI providers while maximizing the value of their AI investments.</p>
+
+      <div class="article-cta">
+        <div>
+          <h3>Ready to get started?</h3>
+          <p>See how OneOps helps enterprises govern AI, manage API keys, and scale AI tools with confidence.</p>
+        </div>
+        <button type="button" class="btn btn-light" data-open-demo>Book a demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+      </div>
+    </article>
+  </div>
+
+  <section class="section tight">
+    <div class="container">
+      <div class="section-head left" style="margin-bottom:32px">
+        <span class="eyebrow">Keep reading</span>
+        <h2>More from the OneOps blog</h2>
+      </div>
+      <div class="post-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+        <a class="post-card reveal" href="../blog/how-to-control-ai-spending-across-your-organization.html" data-title="how to control ai spending across your organization learn how to control ai spending across your organization with practical strategies for cost optimization, governance, usage monitoring, and smarter ai investments.">
+          <div class="img"><img src="../img/blog-1-spend-control.webp" alt="How to Control AI Spending Across Your Organization" loading="lazy" width="800" height="500"></div>
+          <div class="body">
+            <span class="cat">Cost Management</span>
+            <h3>How to Control AI Spending Across Your Organization</h3>
+            <p>Learn how to control AI spending across your organization with practical strategies for cost optimization, governance, usage monitoring, and smarter AI investments.</p>
+            <div class="post-meta"><time datetime="2026-09-15">Sep 15, 2026</time><span class="sep"></span><span>7 min read</span></div>
+          </div>
+        </a>
+        <a class="post-card reveal" href="../blog/why-ai-governance-is-the-next-big-enterprise-priority.html" data-title="why ai governance is the next big enterprise priority ai governance is becoming a top enterprise priority. learn how organizations can manage ai risks, ensure compliance, and scale ai responsibly.">
+          <div class="img"><img src="../img/blog-3-ai-governance.webp" alt="Why AI Governance Is the Next Big Enterprise Priority" loading="lazy" width="800" height="500"></div>
+          <div class="body">
+            <span class="cat">Governance</span>
+            <h3>Why AI Governance Is the Next Big Enterprise Priority</h3>
+            <p>AI governance is becoming a top enterprise priority. Learn how organizations can manage AI risks, ensure compliance, and scale AI responsibly.</p>
+            <div class="post-meta"><time datetime="2026-07-23">Jul 23, 2026</time><span class="sep"></span><span>5 min read</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="../index.html"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L90 27 L90 60 L50 60 Z" fill="#D5857A"/><path d="M50 4 L10 27 L10 60 L50 60 Z" fill="#C33A2E"/><path d="M10 60 L50 60 L90 60 L90 73 L50 96 L10 73 Z" fill="#7A5C6E"/><path d="M10 60 L50 82 L90 60" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1.5"/></svg><span>ONE</span><b>OPS</b></a>
+        <p>The enterprise AI operations platform. Manage keys, track spend, control access – one platform for everything your company runs on AI.</p>
+        <div class="badges"><span>SOC 2 Type II</span><span>GDPR</span><span>HIPAA</span><span>AES-256</span><span>99.9% SLA</span></div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul><li><a href="../features.html">Features</a></li><li><a href="../index.html#pricing">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Docs</a></li><li><a href="../index.html#security">Security</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#">About</a></li><li><a href="../blog.html">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#" data-open-demo>Contact</a></li><li><a href="#">Partners</a></li></ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">DPA</a></li></ul>
+      </div>
+      <div class="newsletter">
+        <h4>Stay in the loop</h4>
+        <p>AI governance insights, once a month. No spam.</p>
+        <form class="nl" novalidate>
+          <input type="email" placeholder="you@company.com" aria-label="Work email" required>
+          <button class="btn btn-dark btn-sm" type="submit">Subscribe</button>
+        </form>
+        <div class="msg" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> OneOps Technologies Inc. All rights reserved.</span>
+      <span class="status-dot">All systems operational</span>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4 0-3.2-1.95-3.2S12.8 13.5 12.8 15.1V21H9z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.2L4.8 21H1.6l7.5-8.6L1.2 3h6.6l4.5 5.7zm-1.1 16.2h1.8L6.7 4.7H4.8z"/></svg></a>
+        <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-word" aria-hidden="true">ONE<b>OPS</b></div>
+  </div>
+</footer>
+
+<div class="modal" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-title" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-dialog">
+    <button class="modal-close" data-close-modal aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <aside class="modal-aside">
+      <a class="logo" style="color:#fff"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L90 27 L90 60 L50 60 Z" fill="#D5857A"/><path d="M50 4 L10 27 L10 60 L50 60 Z" fill="#C33A2E"/><path d="M10 60 L50 60 L90 60 L90 73 L50 96 L10 73 Z" fill="#7A5C6E"/><path d="M10 60 L50 82 L90 60" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1.5"/></svg><span>ONE</span><b style="color:var(--salmon)">OPS</b></a>
+      <h3>Get early access to OneOps</h3>
+      <p>Be among the first to manage your enterprise AI stack.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>A personalised 30-minute walkthrough</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>14-day free trial, no credit card required</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Connect your first provider in minutes</li>
+      </ul>
+      <div class="mq">“We caught a $4,000 overage before it happened.”<b>Morgan K. · CTO, Series B SaaS</b></div>
+    </aside>
+    <div class="modal-form">
+      <h4 id="demo-title">Book your demo</h4>
+      <p>Tell us a little about your team and we’ll be in touch within one business day.</p>
+      <form id="demo-form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="f-name">Full name <i>*</i></label><input id="f-name" name="name" required autocomplete="name"><div class="err">Please enter your name.</div></div>
+          <div class="field"><label for="f-email">Work email <i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email"><div class="err">Please enter a valid work email.</div></div>
+          <div class="field"><label for="f-company">Company name <i>*</i></label><input id="f-company" name="company" required autocomplete="organization"><div class="err">Please enter your company.</div></div>
+          <div class="field"><label for="f-role">Job title / role <i>*</i></label><input id="f-role" name="role" required placeholder="CTO, CISO, Head of IT…"><div class="err">Please enter your role.</div></div>
+          <div class="field"><label for="f-phone">Phone number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-site">Website</label><input id="f-site" name="website" placeholder="company.com"></div>
+          <div class="field full"><label for="f-msg">Requirements</label><textarea id="f-msg" name="message" placeholder="AI governance, spend or compliance needs…"></textarea></div>
+        </div>
+        <div class="form-foot">
+          <button class="btn btn-primary btn-block" type="submit">Request my demo</button>
+          <small>By submitting, you agree to our Privacy Policy. We never share your data.</small>
+        </div>
+      </form>
+      <div class="form-success" aria-live="polite">
+        <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h4>You’re on the list!</h4>
+        <p>Thanks — our team will reach out within one business day to schedule your demo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

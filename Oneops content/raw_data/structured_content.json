@@ -1,0 +1,392 @@
+{
+  "site": {
+    "name": "OneOps",
+    "domain": "oneops.pro",
+    "tagline": "Enterprise AI Governance Platform",
+    "meta_description": "OneOps is an AI governance platform designed to help organizations manage LLMs and AI tools responsibly, ensuring visibility, governance, and operational efficiency.",
+    "brand_promise": "Every AI key. Every team. One platform.",
+    "target_audience": [
+      "CTOs & CIOs",
+      "Chief Information Security Officers (CISOs)",
+      "Heads of IT & Infrastructure",
+      "Finance & Procurement Leads",
+      "VP Operations & AI Platform Leads"
+    ]
+  },
+  "navigation": {
+    "logo": {
+      "text": "OneOps",
+      "image": "media/images/oneops-logo.png",
+      "dark_image": "media/images/On-charcoal.png"
+    },
+    "links": [
+      {
+        "label": "Features",
+        "href": "/feature/"
+      },
+      {
+        "label": "Compare",
+        "href": "#oneops-compare"
+      },
+      {
+        "label": "Pricing",
+        "href": "#oneops-pricing"
+      },
+      {
+        "label": "Blogs",
+        "href": "/blogs/"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Log in",
+        "href": "https://app.oneops.pro",
+        "type": "secondary"
+      },
+      {
+        "label": "Get early access",
+        "href": "#fluentform_1",
+        "type": "primary"
+      }
+    ]
+  },
+  "home_page": {
+    "hero": {
+      "eyebrow": "Enterprise AI Operations",
+      "headline": "Every AI key. Every team. One platform.",
+      "subheadline": "OneOps is the enterprise AI Governance platform which serves as the control plane for enterprise AI. Manage keys, track spend by team and person, enforce budgets, and govern access across every AI model your company uses.",
+      "primary_cta": {
+        "label": "Book a demo",
+        "action": "open_form"
+      },
+      "secondary_cta": {
+        "label": "See how it works",
+        "target": "#oneops-features"
+      },
+      "trusted_by": [
+        "Acme Corp",
+        "Nexus AI",
+        "Meridian",
+        "Vortex Labs"
+      ]
+    },
+    "problem_section": {
+      "eyebrow": "The problem",
+      "headline": "Your teams are using 12 AI tools. You have no idea who authorized half of them.",
+      "cards": [
+        {
+          "title": "Keys scattered everywhere",
+          "description": "API keys living in Slack threads, Notion pages, and engineers' .env files. No rotation schedule, no audit trail, no visibility into who has what."
+        },
+        {
+          "title": "Spend is a complete mystery",
+          "description": "You get a $14,000 invoice from Anthropic at month-end and spend two days piecing together which team burned it – with no person-level breakdown anywhere."
+        },
+        {
+          "title": "Zero access governance",
+          "description": "Marketing has access to the same models as your infrastructure team – no usage policies, no budget limits, no offboarding process when someone leaves."
+        }
+      ]
+    },
+    "core_features": {
+      "eyebrow": "The solution",
+      "headline": "Everything your AI operations team needs in one dashboard.",
+      "features": [
+        {
+          "id": "vault",
+          "title": "One vault for every AI key you own",
+          "description": "Centrally store, rotate, and monitor API keys for Claude, Gemini, OpenAI, Bedrock, Groq, Mistral, and 40+ other providers. No more keys scattered across .env files and Slack threads.",
+          "bullets": [
+            "Expiry alerts at 14, 7, and 3 days – Slack + email",
+            "Full audit log of every key action – who touched what, when",
+            "One-click rotation without cycling the underlying provider key"
+          ]
+        },
+        {
+          "id": "spend_tracking",
+          "title": "Know exactly what AI costs – and who.",
+          "description": "Track spending by provider, model, team, and individual member in real time. Set monthly budgets with hard caps. No more end-of-month invoice surprises.",
+          "bullets": [
+            "Per-person spend attribution – every API call tracked to a name",
+            "Budget alerts at 50%, 75%, 90% – soft or hard caps",
+            "Export spend reports for finance chargebacks"
+          ]
+        },
+        {
+          "id": "model_assignment",
+          "title": "Give each team the right model.",
+          "description": "Assign specific AI models to specific teams with zero code changes. Dev gets Claude + Bedrock. Marketing gets Gemini. Sales gets GPT-4o. Reconfigure access in seconds.",
+          "bullets": [
+            "SSO/SCIM – auto-provision and deprovision via Okta, Azure AD",
+            "Role-based permissions – Admin, Team Lead, Member, Viewer",
+            "Instant access revocation – no key rotation required"
+          ]
+        },
+        {
+          "id": "guardrails",
+          "title": "Stop sensitive data from leaving your org.",
+          "description": "Every prompt your team sends is scanned in real time before it reaches any LLM provider. Names, emails, SSNs, card numbers, medical records, financial data – all caught and handled before they leave your network.",
+          "bullets": [
+            "Block, redact, or alert – configurable per team or provider",
+            "Detects 20+ PII types – names, emails, SSNs, IBANs, health data, and more",
+            "Full violation log for GDPR, HIPAA, and SOC 2 audits",
+            "Custom rules – flag internal project names, client IDs, proprietary terms"
+          ]
+        },
+        {
+          "id": "knowledge_base",
+          "title": "Your team's context, auto-injected. Zero waste.",
+          "description": "Build a team-specific knowledge base – brand guidelines, codebase conventions, product specs, client context. OneOps automatically injects the right KB into every LLM request, so your team never has to paste background context again.",
+          "bullets": [
+            "Team-scoped – Marketing, Dev, Sales each get their own KB",
+            "Versioned and owned – every doc has an author and review date",
+            "Smart injection – only relevant KB chunks sent, not the whole library"
+          ]
+        }
+      ]
+    },
+    "extended_capabilities": {
+      "headline": "Powerful capabilities built for your teams — create, collaborate, discover insights, and work smarter.",
+      "items": [
+        {
+          "title": "Sophia AI",
+          "description": "Go beyond dashboards and discover what is happening across your AI ecosystem. Administrators can interact with Sophia AI to understand team and user token consumption, spending patterns, prompts being used, and overall AI usage across the organization. Sophia also helps administrators stay ahead with budget alerts when a member exceeds their allocated limit and instant notifications when AI providers release new updates, features, or changes across their ecosystem and tools.",
+          "highlights": [
+            "Budget alerts",
+            "Provider update notifications"
+          ]
+        },
+        {
+          "title": "Feedback System",
+          "description": "Capture monthly feedback from users on a recurring basis to understand their experience with OneOps, identify friction points, and surface issues that need attention. Feedback creates a continuous loop between users, administrators, and the OneOps team.",
+          "highlights": [
+            "Recurring monthly cycles",
+            "Friction point detection",
+            "Closed feedback loop"
+          ]
+        },
+        {
+          "title": "Prompt Library",
+          "description": "Keep valuable conversations and prompts accessible instead of recreating them every time. Prompt Library automatically retains previous prompts and conversations, allowing users to save, revisit, and retrieve useful prompts whenever they need them.",
+          "highlights": [
+            "Auto-retained history",
+            "Save and revisit",
+            "Team-wide reuse"
+          ]
+        },
+        {
+          "title": "Motion Studio",
+          "description": "Bring AI-powered creativity directly into your OneOps experience with integrated Motion Studio capabilities. Users can create and edit videos using intuitive manual tools or prompt-driven workflows, making it easier to turn ideas into engaging visual content.",
+          "highlights": [
+            "Manual editing tools",
+            "Prompt-driven workflows",
+            "Video in one place"
+          ]
+        }
+      ]
+    },
+    "how_it_works": {
+      "eyebrow": "Setup in minutes",
+      "headline": "Connect. Assign. Control.",
+      "subtitle": "Three steps to full visibility over every AI tool in your company.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Connect your providers",
+          "description": "Paste in your API keys for any AI provider – Claude, OpenAI, Gemini, Bedrock, Mistral, Groq, and more. OneOps vaults them with AES-256 encryption immediately."
+        },
+        {
+          "number": "02",
+          "title": "Create teams, assign models",
+          "description": "Set up your teams and choose which AI models each one can access. Define monthly budgets per team or per person. Sync with Okta or Azure AD via SCIM."
+        },
+        {
+          "number": "03",
+          "title": "Track, alert, optimize",
+          "description": "Watch spend in real time. Get alerts before limits are hit. Rotate keys on schedule. Pull reports for finance. One dashboard for all of it – forever."
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "quote": "Finally one place to see that Marketing is burning through Gemini credits and Dev has 3 expired Bedrock keys. We caught a $4,000 overage before it happened.",
+        "author": "Morgan K.",
+        "role": "CTO, Series B SaaS Company",
+        "initials": "MK"
+      },
+      {
+        "quote": "When a developer left, we revoked their AI access in 30 seconds from a single screen. Before OneOps that would have been a 2-hour audit across five different provider dashboards.",
+        "author": "Sarah R.",
+        "role": "Head of IT Security, 300-person fintech",
+        "initials": "SR"
+      },
+      {
+        "quote": "Finance asked me which departments were driving our AI costs. I pulled a full breakdown by team, model, and person in 2 minutes. That used to be a week-long spreadsheet exercise.",
+        "author": "Tom L.",
+        "role": "VP Operations, 500-person enterprise",
+        "initials": "TL"
+      }
+    ],
+    "pricing": {
+      "trial_badge": "All plans include a 14-day free trial. No credit card required.",
+      "plans": [
+        {
+          "tier": "Starter",
+          "price": 49,
+          "currency": "USD",
+          "period": "month",
+          "description": "For small teams getting started with AI governance.",
+          "features": [
+            "Up to 3 teams",
+            "10 AI provider keys",
+            "25 team members",
+            "Basic spend tracking",
+            "Email alerts"
+          ],
+          "cta": "Start free trial"
+        },
+        {
+          "tier": "Growth",
+          "featured": true,
+          "price": 199,
+          "currency": "USD",
+          "period": "month",
+          "description": "For growing companies managing AI across multiple departments.",
+          "features": [
+            "Up to 10 teams",
+            "Unlimited API keys",
+            "100 team members",
+            "Full analytics + budget alerts",
+            "Slack integration",
+            "Knowledge base",
+            "SSO (Google, Microsoft)"
+          ],
+          "cta": "Start free trial"
+        },
+        {
+          "tier": "Enterprise",
+          "price": "Custom",
+          "period": "custom",
+          "description": "For large organizations with complex compliance needs.",
+          "features": [
+            "Unlimited teams & members",
+            "SAML/SCIM SSO",
+            "SOC 2 Type II + HIPAA",
+            "Private cloud / VPC deploy",
+            "HRIS sync + finance export",
+            "Dedicated success manager"
+          ],
+          "cta": "Book a demo"
+        }
+      ]
+    },
+    "cta_banner": {
+      "headline": "Stop managing AI access in Slack.",
+      "subheadline": "OneOps gives your enterprise the visibility, control, and AI governance layer that your AI stack has been missing – from day one and manage LLM API keys easily.",
+      "primary_cta": "Book a demo",
+      "secondary_cta": "Start free trial — no card needed"
+    }
+  },
+  "features_page": {
+    "hero": {
+      "eyebrow": "AI Cost Management",
+      "headline": "Total control over total AI spend.",
+      "subheadline": "OneOps simplifies AI Cost Management with one dashboard to track spend across providers, catch budget overruns, and uncover hidden waste across your AI stack.",
+      "stats_preview": {
+        "total_spend": "$14,850.00",
+        "growth": "+24% vs last month",
+        "providers": {
+          "OpenAI": "$8,500",
+          "Anthropic": "$4,100",
+          "Google Vertex": "$2,250"
+        },
+        "warning": "Q3 Budget Warning: 95% consumed. Overrun imminent across 2 teams."
+      }
+    },
+    "problems": [
+      {
+        "title": "No one owns the total",
+        "description": "Every team pays for its own AI tools separately. There's no single number anyone can point to."
+      },
+      {
+        "title": "Problems show up too late",
+        "description": "Most teams only find out they've overspent when the bill arrives, not before."
+      },
+      {
+        "title": "AI usage is hard to track",
+        "description": "With teams using different tools, understanding who is spending what can be difficult. Token usage and consumption remain scattered across providers."
+      }
+    ],
+    "tabs": [
+      {
+        "id": "spend_management",
+        "title": "Track AI spending with smarter AI Spend Management",
+        "description": "OneOps gives you a centralized view of spending across providers, models, teams, and applications, making it easier to understand where your AI budget is going.",
+        "breakdown": {
+          "OpenAI": "$4,120",
+          "Claude": "$3,340",
+          "Gemini": "$1,780",
+          "Bedrock": "$1,340",
+          "Azure": "$1,105"
+        }
+      },
+      {
+        "id": "usage_analytics",
+        "title": "Gain Better Control with AI Usage Analytics",
+        "description": "A dashboard tells you the number went up. OneOps tells you why — broken down to the dimension that actually explains it and helps to control it.",
+        "dimensions": [
+          "Team",
+          "User",
+          "Application",
+          "API key",
+          "Provider",
+          "Model",
+          "Project"
+        ]
+      },
+      {
+        "id": "budget_management",
+        "title": "AI Budget Management",
+        "description": "Budget overruns are rarely dramatic — they're a slow drift nobody notices until the invoice arrives. Set thresholds by team, department, project, or provider.",
+        "mockup": {
+          "target": "Marketing · Claude budget",
+          "status": "82% used (9 days left in cycle)",
+          "warning": "Projected to exceed budget in 6 days at current burn rate"
+        }
+      },
+      {
+        "id": "cost_optimization",
+        "title": "Drive Smarter AI Cost Optimization",
+        "description": "The better move is to spend what you're already spending more precisely. OneOps surfaces where to start.",
+        "actions": [
+          "Compare provider cost",
+          "Find underutilized usage",
+          "Trim token consumption"
+        ]
+      }
+    ]
+  },
+  "blogs": [
+    {
+      "slug": "how-to-control-ai-spending-across-your-organization",
+      "title": "How to Control AI Spending Across Your Organization",
+      "published": "2026-09-15",
+      "read_time": "7 min read",
+      "cover_image": "media/images/blog-1-spend-control.webp"
+    },
+    {
+      "slug": "hidden-challenges-of-managing-multiple-ai-providers",
+      "title": "Hidden Challenges of Managing Multiple AI Providers",
+      "published": "2026-08-08",
+      "read_time": "6 min read",
+      "cover_image": "media/images/blog-2-multi-provider.webp"
+    },
+    {
+      "slug": "why-ai-governance-is-the-next-big-enterprise-priority",
+      "title": "Why AI Governance Is the Next Big Enterprise Priority",
+      "published": "2026-07-23",
+      "read_time": "5 min read",
+      "cover_image": "media/images/blog-3-ai-governance.webp"
+    }
+  ]
+}

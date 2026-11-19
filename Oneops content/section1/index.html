@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OneOps &mdash; Extended Capabilities & Rotary Feature Roadmap</title>
+  
+  <!-- Google Fonts: Space Grotesk, Inter, Caveat (script) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Navigation Bar -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-logo" aria-label="OneOps Logo">
+        <img src="oneops-logo.png" alt="OneOps" style="height: 38px; width: auto; object-fit: contain;">
+        <span class="brand-badge" style="background: rgba(194, 59, 46, 0.15); color: #E07063; border-color: rgba(194, 59, 46, 0.3);">Enterprise Edition</span>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#why" class="nav-link">Why OneOps</a>
+        <a href="#features" class="nav-link is-active">Capabilities</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- OneOps Theme Switcher -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <span class="theme-icon light-icon" aria-hidden="true">☀️</span>
+          <span class="theme-icon dark-icon" aria-hidden="true">🌙</span>
+          <span class="theme-label">Theme</span>
+        </button>
+
+        <a href="#demo" class="btn btn-primary btn-pill" style="background: #C23B2E; color: #fff;">
+          <span class="btn-icon" aria-hidden="true">↗</span>
+          <span>Book a Demo</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Natural Entry Hero Section -->
+  <section class="intro-section" id="why">
+    <div class="intro-content">
+      <span class="section-tag" style="color: #E07063; border-color: rgba(194, 59, 46, 0.3); background: rgba(194, 59, 46, 0.1);">Beyond Governance</span>
+      <h1 class="intro-title">Unified AI Operations in Continuous Motion</h1>
+      <p class="intro-lead">OneOps goes beyond managing AI tools, giving enterprise teams powerful ways to collaborate, discover spending patterns, retain intelligence, and work smarter.</p>
+      <div class="scroll-prompt" aria-hidden="true">
+        <span class="mouse-icon">
+          <span class="mouse-wheel" style="background: #C23B2E;"></span>
+        </span>
+        <span class="prompt-text">Scroll down to rotate the dial</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN SCROLL-DRIVEN ROTARY DIAL SECTION -->
+  <section class="dial-section" id="features" aria-label="Feature Roadmap Dial">
+    
+    <!-- Architectural Grid & Floating Isometric Wireframe -->
+    <div class="dial-bg-canvas" aria-hidden="true">
+      <div class="bg-v-grid"></div>
+      
+      <!-- Faint floating 3D wireframe mesh -->
+      <div class="isometric-wireframe">
+        <svg viewBox="0 0 320 320" class="iso-grid-svg">
+          <defs>
+            <linearGradient id="iso-pink-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#C23B2E" stop-opacity="0.45" />
+              <stop offset="50%" stop-color="#E07063" stop-opacity="0.25" />
+              <stop offset="100%" stop-color="#7A5C6E" stop-opacity="0.05" />
+            </linearGradient>
+          </defs>
+          <g transform="translate(160, 40) scale(1.1, 0.58) rotate(45)">
+            <rect x="-100" y="-100" width="200" height="200" fill="none" stroke="url(#iso-pink-grad)" stroke-width="1.2" />
+            <path d="M-80 -100 V100 M-60 -100 V100 M-40 -100 V100 M-20 -100 V100 M0 -100 V100 M20 -100 V100 M40 -100 V100 M60 -100 V100 M80 -100 V100" stroke="url(#iso-pink-grad)" stroke-width="0.75" />
+            <path d="M-100 -80 H100 M-100 -60 H100 M-100 -40 H100 M-100 -20 H100 M-100 0 H100 M-100 20 H100 M-100 40 H100 M-100 60 H100 M-100 80 H100" stroke="url(#iso-pink-grad)" stroke-width="0.75" />
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Pinned Sticky Stage -->
+    <div class="dial-sticky-stage" id="dial-stage">
+      
+      <!-- Upper Stage Header -->
+      <div class="dial-stage-header">
+        <span class="dial-kicker" style="color: #E07063;">AI Operations Ecosystem</span>
+        <div class="dial-progress-counter" aria-live="polite">
+          <span class="current-phase" id="phase-number">Phase 01</span>
+          <span class="counter-divider">/</span>
+          <span class="total-phases">04</span>
+        </div>
+      </div>
+
+      <!-- Rotary Dial Viewport -->
+      <div class="dial-viewport" id="dial-viewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Rotary feature carousel. Use arrow keys, horizontal drag, or scroll to rotate.">
+        
+        <!-- Rotating SVG Gauge / Tick Marks Track -->
+        <svg class="dial-track-svg" id="dial-track-svg" aria-hidden="true"></svg>
+
+        <!-- Rotating Cards Carrier -->
+        <div class="dial-wheel" id="dial-wheel">
+
+          <!-- CARD 01: Crimson Red (LIVE: Sophia AI) -->
+          <article class="dial-card-node" data-index="0" data-theme="cyan" id="card-node-0">
+            <div class="card-ticket card-cyan" style="background: linear-gradient(135deg, #C23B2E 0%, #8E2319 100%);">
+              <!-- Scroll-Parallax Artwork Carrier -->
+              <div class="ticket-artwork" aria-hidden="true">
+                <svg viewBox="0 0 440 250" class="ticket-svg" preserveAspectRatio="xMidYMid meet">
+                  <!-- Giant Digit 0 with centered ONEOPS -->
+                  <g class="glyph-zero">
+                    <path fill="#ffffff" fill-rule="evenodd" d="M 124 16 C 54 16 0 68 0 130 C 0 192 54 244 124 244 C 182 244 228 204 238 152 L 194 152 C 186 182 158 204 124 204 C 80 204 46 170 46 130 C 46 90 80 56 124 56 C 158 56 186 78 194 108 L 238 108 C 228 56 182 16 124 16 Z"/>
+                    <text x="124" y="136" text-anchor="middle" font-family="'Space Grotesk', -apple-system, sans-serif" font-weight="800" font-size="16" fill="#ffffff" letter-spacing="1.2">ONEOPS</text>
+                  </g>
+
+                  <!-- Giant Digit 1 matching height and weight -->
+                  <g class="glyph-one">
+                    <path fill="#ffffff" d="M 230 76 C 242 76 256 70 266 54 L 266 206 L 210 206 L 210 244 L 328 244 L 328 206 L 284 206 L 284 24 C 284 18 280 16 274 16 L 254 16 C 246 16 238 22 232 30 L 210 60 Z"/>
+                  </g>
+
+                  <!-- LIVE Badge -->
+                  <g class="glyph-badge badge-live">
+                    <circle cx="346" cy="132" r="26" fill="#ffffff" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.1))"/>
+                    <text x="346" y="138" text-anchor="middle" font-family="'Caveat', cursive, sans-serif" font-weight="700" font-size="22" fill="#C23B2E">Live</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-main);">Sophia AI Operations Assistant</h3>
+              <ul class="feature-checklist">
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#C23B2E;" aria-hidden="true">■</span>
+                  <span class="item-text">Token consumption and spend insights via natural chat.</span>
+                </li>
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#C23B2E;" aria-hidden="true">■</span>
+                  <span class="item-text">Proactive budget alerts before members hit hard limits.</span>
+                </li>
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#C23B2E;" aria-hidden="true">■</span>
+                  <span class="item-text">Instant notifications when providers release model updates.</span>
+                </li>
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#C23B2E;" aria-hidden="true">■</span>
+                  <span class="item-text">Non-technical operational dashboards for Finance & IT.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- CARD 02: Warm Plum/Mauve (LIVE: Prompt Library) -->
+          <article class="dial-card-node" data-index="1" data-theme="gold" id="card-node-1">
+            <div class="card-ticket card-gold" style="background: linear-gradient(135deg, #7A5C6E 0%, #4D3545 100%);">
+              <!-- Scroll-Parallax Artwork Carrier -->
+              <div class="ticket-artwork" aria-hidden="true">
+                <svg viewBox="0 0 440 250" class="ticket-svg" preserveAspectRatio="xMidYMid meet">
+                  <g class="glyph-zero">
+                    <path fill="#ffffff" fill-rule="evenodd" d="M 124 16 C 54 16 0 68 0 130 C 0 192 54 244 124 244 C 182 244 228 204 238 152 L 194 152 C 186 182 158 204 124 204 C 80 204 46 170 46 130 C 46 90 80 56 124 56 C 158 56 186 78 194 108 L 238 108 C 228 56 182 16 124 16 Z"/>
+                    <text x="124" y="136" text-anchor="middle" font-family="'Space Grotesk', -apple-system, sans-serif" font-weight="800" font-size="16" fill="#ffffff" letter-spacing="1.2">ONEOPS</text>
+                  </g>
+
+                  <g class="glyph-two">
+                    <path fill="#ffffff" d="M 216 78 C 216 42 246 16 288 16 C 330 16 358 44 358 78 C 358 104 340 128 316 152 L 254 206 L 366 206 L 366 244 L 216 244 L 216 210 L 292 134 C 314 112 322 96 322 78 C 322 58 308 44 288 44 C 268 44 252 58 252 78 Z"/>
+                  </g>
+
+                  <g class="glyph-badge badge-next-2">
+                    <rect x="278" y="96" width="94" height="38" rx="19" fill="#ffffff" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.1))"/>
+                    <text x="325" y="122" text-anchor="middle" font-family="'Caveat', cursive, sans-serif" font-weight="700" font-size="21" fill="#7A5C6E">Live</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-main);">Prompt Library & Reuse</h3>
+              <ul class="feature-checklist">
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#7A5C6E;" aria-hidden="true">■</span>
+                  <span class="item-text">Auto-retained history across all enterprise conversations.</span>
+                </li>
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#7A5C6E;" aria-hidden="true">■</span>
+                  <span class="item-text">Save, tag, and revisit high-performing departmental prompts.</span>
+                </li>
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#7A5C6E;" aria-hidden="true">■</span>
+                  <span class="item-text">Eliminate duplicate prompt engineering across teams.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- CARD 03: Coral Salmon (NEW: Motion Studio) -->
+          <article class="dial-card-node" data-index="2" data-theme="sage" id="card-node-2">
+            <div class="card-ticket card-sage" style="background: linear-gradient(135deg, #D4857A 0%, #A35449 100%);">
+              <!-- Scroll-Parallax Artwork Carrier -->
+              <div class="ticket-artwork" aria-hidden="true">
+                <svg viewBox="0 0 440 250" class="ticket-svg" preserveAspectRatio="xMidYMid meet">
+                  <g class="glyph-zero">
+                    <path fill="#ffffff" fill-rule="evenodd" d="M 124 16 C 54 16 0 68 0 130 C 0 192 54 244 124 244 C 182 244 228 204 238 152 L 194 152 C 186 182 158 204 124 204 C 80 204 46 170 46 130 C 46 90 80 56 124 56 C 158 56 186 78 194 108 L 238 108 C 228 56 182 16 124 16 Z"/>
+                    <text x="124" y="136" text-anchor="middle" font-family="'Space Grotesk', -apple-system, sans-serif" font-weight="800" font-size="16" fill="#ffffff" letter-spacing="1.2">ONEOPS</text>
+                  </g>
+
+                  <g class="glyph-three">
+                    <path fill="#ffffff" d="M 224 38 L 224 16 L 350 16 L 350 48 L 284 106 C 304 106 324 114 338 128 C 354 144 362 166 362 192 C 362 222 340 244 294 244 C 252 244 224 222 216 190 L 254 176 C 260 196 274 212 294 212 C 314 212 326 198 326 184 C 326 166 312 154 286 154 L 260 154 L 260 124 L 296 90 L 252 90 L 224 90 Z"/>
+                  </g>
+
+                  <g class="glyph-badge badge-next-3">
+                    <rect x="296" y="118" width="94" height="38" rx="19" fill="#ffffff" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.1))"/>
+                    <text x="343" y="144" text-anchor="middle" font-family="'Caveat', cursive, sans-serif" font-weight="700" font-size="21" fill="#D4857A">New</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-main);">Motion Studio</h3>
+              <ul class="feature-checklist">
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#D4857A;" aria-hidden="true">■</span>
+                  <span class="item-text">Prompt-driven AI video workflows directly inside OneOps.</span>
+                </li>
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#D4857A;" aria-hidden="true">■</span>
+                  <span class="item-text">Intuitive manual tools to refine visual sequences.</span>
+                </li>
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#D4857A;" aria-hidden="true">■</span>
+                  <span class="item-text">Centralized video asset management and security.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- CARD 04: Dark Charcoal & Crimson (UP NEXT: Compliance Feedback) -->
+          <article class="dial-card-node" data-index="3" data-theme="coral" id="card-node-3">
+            <div class="card-ticket card-coral" style="background: linear-gradient(135deg, #3A2E35 0%, #20171D 100%); border: 1px solid rgba(194, 59, 46, 0.4);">
+              <!-- Scroll-Parallax Artwork Carrier -->
+              <div class="ticket-artwork" aria-hidden="true">
+                <svg viewBox="0 0 440 250" class="ticket-svg" preserveAspectRatio="xMidYMid meet">
+                  <g class="glyph-zero">
+                    <path fill="#ffffff" fill-rule="evenodd" d="M 124 16 C 54 16 0 68 0 130 C 0 192 54 244 124 244 C 182 244 228 204 238 152 L 194 152 C 186 182 158 204 124 204 C 80 204 46 170 46 130 C 46 90 80 56 124 56 C 158 56 186 78 194 108 L 238 108 C 228 56 182 16 124 16 Z"/>
+                    <text x="124" y="136" text-anchor="middle" font-family="'Space Grotesk', -apple-system, sans-serif" font-weight="800" font-size="16" fill="#ffffff" letter-spacing="1.2">ONEOPS</text>
+                  </g>
+
+                  <g class="glyph-four">
+                    <path fill="#ffffff" d="M 302 16 L 342 16 L 342 160 L 372 160 L 372 196 L 342 196 L 342 244 L 298 244 L 298 196 L 204 196 L 204 162 L 302 16 Z M 298 76 L 246 160 L 298 160 L 298 76 Z"/>
+                  </g>
+
+                  <g class="glyph-badge badge-next-4">
+                    <rect x="288" y="78" width="94" height="38" rx="19" fill="#ffffff" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.1))"/>
+                    <text x="335" y="104" text-anchor="middle" font-family="'Caveat', cursive, sans-serif" font-weight="700" font-size="20" fill="#3A2E35">Feedback</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 style="font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-main);">Enterprise Feedback & Audit</h3>
+              <ul class="feature-checklist">
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#C23B2E;" aria-hidden="true">■</span>
+                  <span class="item-text">Recurring monthly user feedback and sentiment cycles.</span>
+                </li>
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#C23B2E;" aria-hidden="true">■</span>
+                  <span class="item-text">Continuous friction point and shadow-AI detection.</span>
+                </li>
+                <li class="checklist-item">
+                  <span class="item-bullet" style="color:#C23B2E;" aria-hidden="true">■</span>
+                  <span class="item-text">Full violation logs for SOC 2, HIPAA, and GDPR compliance.</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+        </div><!-- /.dial-wheel -->
+      </div><!-- /.dial-viewport -->
+
+      <!-- Controls Deck (Pagination & Step Controls) -->
+      <div class="dial-controls-deck">
+        <button id="btn-prev" class="dial-nav-btn" aria-label="Rotate to previous phase" title="Previous phase">
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12.5 15l-5-5 5-5"/>
+          </svg>
+        </button>
+
+        <div class="dial-phase-selector" role="tablist" aria-label="Select roadmap phase">
+          <button class="phase-tab-btn is-active" role="tab" aria-selected="true" data-target="0">
+            <span class="phase-badge">01</span>
+            <span class="phase-name">Sophia AI</span>
+          </button>
+          <button class="phase-tab-btn" role="tab" aria-selected="false" data-target="1">
+            <span class="phase-badge">02</span>
+            <span class="phase-name">Prompts</span>
+          </button>
+          <button class="phase-tab-btn" role="tab" aria-selected="false" data-target="2">
+            <span class="phase-badge">03</span>
+            <span class="phase-name">Motion</span>
+          </button>
+          <button class="phase-tab-btn" role="tab" aria-selected="false" data-target="3">
+            <span class="phase-badge">04</span>
+            <span class="phase-name">Compliance</span>
+          </button>
+        </div>
+
+        <button id="btn-next" class="dial-nav-btn" aria-label="Rotate to next phase" title="Next phase">
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.5 5l5 5-5 5"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Tactile Helper Hint -->
+      <div class="dial-hint">
+        <span class="drag-hint-icon">⟷</span>
+        <span>Drag horizontally or scroll page to turn the wheel</span>
+      </div>
+
+    </div><!-- /.dial-sticky-stage -->
+  </section>
+
+  <!-- Lead-out Section -->
+  <section class="outro-section" id="pricing">
+    <div class="outro-content">
+      <span class="section-tag" style="color: #E07063; border-color: rgba(194, 59, 46, 0.3); background: rgba(194, 59, 46, 0.1);">Enterprise Control Plane</span>
+      <h2 class="outro-title">Stop Managing AI Access in Slack Threads.</h2>
+      <p class="outro-text">Centralize every AI key, enforce hard budgets, and ensure zero data leakage across your entire enterprise.</p>
+      <div class="outro-actions">
+        <a href="#why" class="btn btn-outline">Back to top</a>
+        <a href="#demo" class="btn btn-primary" style="background: #C23B2E; color: #fff;">Book a Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2026 OneOps &bull; Enterprise AI Governance Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

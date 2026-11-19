@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Cost Management | OneOps</title>
+<meta name="description" content="OneOps simplifies AI cost management with one dashboard to track spend across providers, catch budget overruns, and uncover hidden waste across your AI stack.">
+<meta name="theme-color" content="#C33A2E">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+
+<div class="announce">
+  <span class="tag">NEW</span><span class="hide-sm">Sophia AI now answers spend &amp; usage questions in plain English. </span><a href="index.html#beyond">See what's new <span aria-hidden="true">→</span></a>
+</div>
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html" aria-label="OneOps home">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L90 27 L90 60 L50 60 Z" fill="#D5857A"/><path d="M50 4 L10 27 L10 60 L50 60 Z" fill="#C33A2E"/><path d="M10 60 L50 60 L90 60 L90 73 L50 96 L10 73 Z" fill="#7A5C6E"/><path d="M10 60 L50 82 L90 60" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1.5"/></svg>
+      <span>ONE</span><b>OPS</b>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="features.html" class="active" aria-current="page">Features</a>
+      <a href="index.html#compare">Compare</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="login" href="https://app.oneops.pro">Log in</a>
+      <button class="btn btn-primary btn-sm" data-open-demo>Book a demo</button>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="page-hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container split-hero">
+      <div class="reveal">
+        <span class="pill"><span class="dot">NEW</span>AI Cost Management</span>
+        <h1>Total control over <span class="grad-text">total AI spend.</span></h1>
+        <p class="lede">OneOps simplifies AI Cost Management with one dashboard to track spend across providers, catch budget overruns, and uncover hidden waste across your AI stack.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" data-open-demo>Book a Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+          <a class="btn btn-ghost" href="#capabilities">See How it Works</a>
+        </div>
+        <div class="hero-note" style="justify-content:flex-start">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>14-day free trial</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>No credit card required</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Connect your first provider in minutes</span>
+        </div>
+      </div>
+
+      <div class="spend-card reveal d2" role="figure" aria-label="AI spend analytics preview: $14,850 this month across OpenAI, Anthropic and Google Vertex">
+        <div class="floating" style="bottom:-26px; left:-30px">
+          <span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+          <div><b>Marketing · Claude budget</b><span>82% used · 9 days left</span></div>
+        </div>
+        <div class="top">
+          <div class="k">AI spend analytics · This month</div>
+          <span class="chip red">+24% vs last month</span>
+        </div>
+        <div class="total" data-count="14850" data-prefix="$" data-decimals="2">$14,850.00</div>
+        <div class="donut-wrap">
+          <svg class="donut" viewBox="0 0 42 42" role="img" aria-label="Spend by provider donut chart">
+            <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#F7F3F1" stroke-width="5"/>
+            <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#C33A2E" stroke-width="5" stroke-dasharray="56.44 43.56" stroke-dashoffset="25"/>
+            <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#D5857A" stroke-width="5" stroke-dasharray="26.81 73.19" stroke-dashoffset="67.76"/>
+            <circle cx="21" cy="21" r="15.9155" fill="none" stroke="#7A5C6E" stroke-width="5" stroke-dasharray="14.35 85.65" stroke-dashoffset="40.15"/>
+            <text x="21" y="20.2" text-anchor="middle" font-family="Inter Tight, Inter, sans-serif" font-size="5.6" font-weight="800" fill="#241B20">$14.9k</text>
+            <text x="21" y="25.4" text-anchor="middle" font-family="Inter, sans-serif" font-size="2.6" font-weight="600" fill="#6D6268" letter-spacing=".2">3 PROVIDERS</text>
+          </svg>
+          <ul class="legend">
+            <li><i style="background:#C33A2E"></i><span>OpenAI</span><b>$8,500</b></li>
+            <li><i style="background:#D5857A"></i><span>Anthropic</span><b>$4,100</b></li>
+            <li><i style="background:#7A5C6E"></i><span>Google Vertex</span><b>$2,250</b></li>
+          </ul>
+        </div>
+        <div class="alert-box" role="status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+          <span><b>Q3 Budget Warning:</b> 95% consumed. Overrun imminent across 2 teams.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROVIDER LOGOS ================= -->
+  <section class="logos" aria-label="Supported AI providers">
+    <div class="container">
+      <p>Track spend across every provider your teams already use</p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <span class="marquee-item"><i>AI</i>OpenAI</span>
+          <span class="marquee-item"><i>A</i>Anthropic</span>
+          <span class="marquee-item"><i>G</i>Google Gemini</span>
+          <span class="marquee-item"><i>B</i>Amazon Bedrock</span>
+          <span class="marquee-item"><i>Az</i>Azure OpenAI</span>
+          <span class="marquee-item"><i>M</i>Mistral AI</span>
+          <span class="marquee-item"><i>Gq</i>Groq</span>
+          <span class="marquee-item"><i>C</i>Cohere</span>
+          <span class="marquee-item" aria-hidden="true"><i>AI</i>OpenAI</span>
+          <span class="marquee-item" aria-hidden="true"><i>A</i>Anthropic</span>
+          <span class="marquee-item" aria-hidden="true"><i>G</i>Google Gemini</span>
+          <span class="marquee-item" aria-hidden="true"><i>B</i>Amazon Bedrock</span>
+          <span class="marquee-item" aria-hidden="true"><i>Az</i>Azure OpenAI</span>
+          <span class="marquee-item" aria-hidden="true"><i>M</i>Mistral AI</span>
+          <span class="marquee-item" aria-hidden="true"><i>Gq</i>Groq</span>
+          <span class="marquee-item" aria-hidden="true"><i>C</i>Cohere</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROBLEM ================= -->
+  <section class="section dark" aria-labelledby="problem-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">The problem</span>
+        <h2 id="problem-title">Nobody's watching the AI bill until it's too big to ignore.</h2>
+        <p>Different teams use different AI tools and AI providers, and each one has its own bill. No one adds it all up — until the finance team gets a surprise invoice and has to figure out where it came from.</p>
+      </div>
+      <div class="problem-grid">
+        <article class="problem-card reveal">
+          <span class="num">01</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>No one owns the total</h3>
+          <p>Every team pays for its own AI tools separately. There's no single number anyone can point to.</p>
+        </article>
+        <article class="problem-card reveal d1">
+          <span class="num">02</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Problems show up too late</h3>
+          <p>Most teams only find out they've overspent when the bill arrives, not before.</p>
+        </article>
+        <article class="problem-card reveal d2">
+          <span class="num">03</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+          <h3>AI usage is hard to track</h3>
+          <p>With teams using different tools, understanding who is spending what can be difficult. Token usage and consumption remain scattered across providers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAPABILITIES (TABS) ================= -->
+  <section class="section alt" id="capabilities" aria-labelledby="cap-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">What you can do with AI Cost Management</span>
+        <h2 id="cap-title">Turn AI spend into an everyday practice, not a monthly surprise.</h2>
+        <p>Four capabilities, one platform — from first dashboard view to enforced budget.</p>
+      </div>
+
+      <div class="tabs-wrap" data-tabs>
+        <div class="tab-list" role="tablist" aria-label="AI Cost Management capabilities">
+          <button class="tab-btn active" data-tab="1" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">
+            <span class="ix">01</span>
+            <div><b>AI Spend Management</b><span class="s">One view of spend across every provider.</span><span class="prog"><i></i></span></div>
+          </button>
+          <button class="tab-btn" data-tab="2" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">
+            <span class="ix">02</span>
+            <div><b>AI Usage Analytics</b><span class="s">See why the number went up, not just that it did.</span><span class="prog"><i></i></span></div>
+          </button>
+          <button class="tab-btn" data-tab="3" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">
+            <span class="ix">03</span>
+            <div><b>AI Budget Management</b><span class="s">Thresholds that catch the slow drift early.</span><span class="prog"><i></i></span></div>
+          </button>
+          <button class="tab-btn" data-tab="4" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false">
+            <span class="ix">04</span>
+            <div><b>Cost Optimization</b><span class="s">Spend what you already spend, more precisely.</span><span class="prog"><i></i></span></div>
+          </button>
+        </div>
+
+        <div class="tab-panels">
+          <!-- 01 -->
+          <div class="tab-panel active" data-tab="1" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+            <h3>Track AI spending with smarter AI Spend Management</h3>
+            <p>OneOps gives you a centralized view of spending across providers, models, teams, and applications, making it easier to understand where your AI budget is going.</p>
+            <div class="panel">
+              <h5>Spend by provider <span>This month</span></h5>
+              <ul class="hbars">
+                <li><span>OpenAI</span><span class="track"><i data-w="100"></i></span><b>$4,120</b></li>
+                <li><span>Claude</span><span class="track"><i data-w="81"></i></span><b>$3,340</b></li>
+                <li><span>Gemini</span><span class="track"><i data-w="43"></i></span><b>$1,780</b></li>
+                <li><span>Bedrock</span><span class="track"><i data-w="33"></i></span><b>$1,340</b></li>
+                <li><span>Azure</span><span class="track"><i data-w="27"></i></span><b>$1,105</b></li>
+              </ul>
+            </div>
+            <div class="stat-row" style="margin-top:12px">
+              <div class="stat"><div class="k">Total spend</div><div class="v">$11,685</div><div class="d">Across all providers</div></div>
+              <div class="stat"><div class="k">Providers</div><div class="v">5</div><div class="d">One dashboard</div></div>
+              <div class="stat"><div class="k">Top model</div><div class="v">GPT-4o</div><div class="d">Highest spend</div></div>
+              <div class="stat"><div class="k">Top provider</div><div class="v">OpenAI</div><div class="d">$4,120 this month</div></div>
+            </div>
+          </div>
+
+          <!-- 02 -->
+          <div class="tab-panel" data-tab="2" role="tabpanel" id="panel-2" aria-labelledby="tab-2">
+            <h3>Gain Better Control with AI Usage Analytics</h3>
+            <p>A dashboard tells you the number went up. OneOps tells you why — broken down to the dimension that actually explains it and helps to control it.</p>
+            <div class="panel" data-dims>
+              <h5>Break down spend by <span>Click a dimension</span></h5>
+              <div class="dims" role="group" aria-label="Breakdown dimension">
+                <button type="button" class="active" data-dim="team">Team</button>
+                <button type="button" data-dim="user">User</button>
+                <button type="button" data-dim="application">Application</button>
+                <button type="button" data-dim="key">API Key</button>
+                <button type="button" data-dim="provider">Provider</button>
+                <button type="button" data-dim="model">Model</button>
+                <button type="button" data-dim="project">Project</button>
+              </div>
+              <div class="dim-out" id="dim-out" aria-live="polite">
+                <ul class="hbars">
+                  <li><span>Development</span><span class="track"><i data-w="100" style="width:100%"></i></span><b>$8,240</b></li>
+                  <li><span>Marketing</span><span class="track"><i data-w="52" style="width:52%"></i></span><b>$4,310</b></li>
+                  <li><span>Sales</span><span class="track"><i data-w="36" style="width:36%"></i></span><b>$2,980</b></li>
+                  <li><span>Operations</span><span class="track"><i data-w="20" style="width:20%"></i></span><b>$1,640</b></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 -->
+          <div class="tab-panel" data-tab="3" role="tabpanel" id="panel-3" aria-labelledby="tab-3">
+            <h3>AI Budget Management</h3>
+            <p>Budget overruns are rarely dramatic — they're a slow drift nobody notices until the invoice arrives. Set thresholds by team, department, project, or provider.</p>
+            <div class="budget-alert">
+              <div class="row"><b>Marketing · Claude budget</b><span class="chip warn">82% used</span></div>
+              <div class="meter" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="Budget used"><i data-w="82"></i></div>
+              <div class="thresholds" aria-hidden="true"><span>0%</span><span>50%</span><span>75%</span><span>90%</span><span>100%</span></div>
+              <p style="margin-top:14px; font-size:14px; color:var(--muted)">9 days left in cycle</p>
+              <div class="alert-box" role="status">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+                <span>Projected to exceed budget in 6 days at current burn rate</span>
+              </div>
+            </div>
+            <ul class="checks">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Budget alerts at 50%, 75%, 90% – soft or hard caps</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Monthly budgets per team or per person</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Thresholds by team, department, project, or provider</li>
+            </ul>
+          </div>
+
+          <!-- 04 -->
+          <div class="tab-panel" data-tab="4" role="tabpanel" id="panel-4" aria-labelledby="tab-4">
+            <h3>Drive Smarter AI Cost Optimization</h3>
+            <p>The better move is to spend what you're already spending more precisely. OneOps surfaces where to start.</p>
+            <div class="levers">
+              <div class="lever">
+                <span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+                <div><b>Compare provider cost</b><span>Switch workloads to equivalent cost-effective models (e.g. Flash/Haiku for routine tasks).</span></div>
+              </div>
+              <div class="lever">
+                <span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+                <div><b>Find underutilized usage</b><span>Detect idle licenses and inactive developer keys.</span></div>
+              </div>
+              <div class="lever">
+                <span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+                <div><b>Trim token consumption</b><span>Use prompt caching and injected team context to prevent redundant payload overhead.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="section" aria-labelledby="steps-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Setup in minutes</span>
+        <h2 id="steps-title">Connect. Assign. Control.</h2>
+        <p>Three steps to full visibility over every AI tool in your company.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="n"><b>1</b>STEP 01</span>
+          <h3>Connect providers</h3>
+          <p>Paste in your API keys for any AI provider – Claude, OpenAI, Gemini, Bedrock, Mistral, Groq, and more. OneOps vaults them with AES-256 encryption immediately.</p>
+          <div class="provs" aria-hidden="true"><span class="p-anth">A</span><span class="p-oai">AI</span><span class="p-goog">G</span><span class="p-aws">B</span><span class="p-mis">M</span><span class="p-groq">Gq</span></div>
+        </div>
+        <div class="step reveal d1">
+          <span class="n"><b>2</b>STEP 02</span>
+          <h3>Set budgets &amp; owners</h3>
+          <p>Set up your teams and choose which AI models each one can access. Define monthly budgets per team or per person. Sync with Okta or Azure AD via SCIM.</p>
+        </div>
+        <div class="step reveal d2">
+          <span class="n"><b>3</b>STEP 03</span>
+          <h3>Get alerts before the invoice</h3>
+          <p>Watch spend in real time. Get alerts before limits are hit. Pull reports for finance. One dashboard for all of it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIAL ================= -->
+  <section class="section tight" style="padding-top:0" aria-label="Customer testimonial">
+    <div class="container">
+      <figure class="quote highlight reveal" style="max-width:760px; margin:0 auto">
+        <div class="stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <blockquote style="font-size:21px">“Finance asked me which departments were driving our AI costs. I pulled a full breakdown by team, model, and person in 2 minutes. That used to be a week-long spreadsheet exercise.”</blockquote>
+        <figcaption class="by">
+          <span class="av" style="background:rgba(255,255,255,.18)" aria-hidden="true">TL</span>
+          <div><b>Tom L.</b><span>VP Operations, 500-person enterprise</span></div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <svg class="cta-mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L90 27 L90 60 L50 60 Z" fill="#D5857A"/><path d="M50 4 L10 27 L10 60 L50 60 Z" fill="#C33A2E"/><path d="M10 60 L50 60 L90 60 L90 73 L50 96 L10 73 Z" fill="#7A5C6E"/><path d="M10 60 L50 82 L90 60" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1.5"/></svg>
+        <h2>Stop finding out about AI spend from the invoice.</h2>
+        <p>Connect your accounts and see your real spend breakdown easily and get visibility before costs get out of hand.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" data-open-demo>Book a demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+          <button class="btn btn-outline-light" data-open-demo>Start free trial — no card needed</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L90 27 L90 60 L50 60 Z" fill="#D5857A"/><path d="M50 4 L10 27 L10 60 L50 60 Z" fill="#C33A2E"/><path d="M10 60 L50 60 L90 60 L90 73 L50 96 L10 73 Z" fill="#7A5C6E"/><path d="M10 60 L50 82 L90 60" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1.5"/></svg><span>ONE</span><b>OPS</b></a>
+        <p>The enterprise AI operations platform. Manage keys, track spend, control access – one platform for everything your company runs on AI.</p>
+        <div class="badges"><span>SOC 2 Type II</span><span>GDPR</span><span>HIPAA</span><span>AES-256</span><span>99.9% SLA</span></div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul><li><a href="features.html">Features</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="#">Changelog</a></li><li><a href="#">Docs</a></li><li><a href="index.html#security">Security</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#" data-open-demo>Contact</a></li><li><a href="#">Partners</a></li></ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li><li><a href="#">DPA</a></li></ul>
+      </div>
+      <div class="newsletter">
+        <h4>Stay in the loop</h4>
+        <p>AI governance insights, once a month. No spam.</p>
+        <form class="nl" novalidate>
+          <input type="email" placeholder="you@company.com" aria-label="Work email" required>
+          <button class="btn btn-dark btn-sm" type="submit">Subscribe</button>
+        </form>
+        <div class="msg" aria-live="polite"></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> OneOps Technologies Inc. All rights reserved.</span>
+      <span class="status-dot">All systems operational</span>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4 0-3.2-1.95-3.2S12.8 13.5 12.8 15.1V21H9z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.2L4.8 21H1.6l7.5-8.6L1.2 3h6.6l4.5 5.7zm-1.1 16.2h1.8L6.7 4.7H4.8z"/></svg></a>
+        <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-word" aria-hidden="true">ONE<b>OPS</b></div>
+  </div>
+</footer>
+
+<div class="modal" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-title" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-dialog">
+    <button class="modal-close" data-close-modal aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <aside class="modal-aside">
+      <a class="logo" style="color:#fff"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L90 27 L90 60 L50 60 Z" fill="#D5857A"/><path d="M50 4 L10 27 L10 60 L50 60 Z" fill="#C33A2E"/><path d="M10 60 L50 60 L90 60 L90 73 L50 96 L10 73 Z" fill="#7A5C6E"/><path d="M10 60 L50 82 L90 60" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1.5"/></svg><span>ONE</span><b style="color:var(--salmon)">OPS</b></a>
+      <h3>Get early access to OneOps</h3>
+      <p>Be among the first to manage your enterprise AI stack.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>A personalised 30-minute walkthrough</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>14-day free trial, no credit card required</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Connect your first provider in minutes</li>
+      </ul>
+      <div class="mq">“We caught a $4,000 overage before it happened.”<b>Morgan K. · CTO, Series B SaaS</b></div>
+    </aside>
+    <div class="modal-form">
+      <h4 id="demo-title">Book your demo</h4>
+      <p>Tell us a little about your team and we’ll be in touch within one business day.</p>
+      <form id="demo-form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="f-name">Full name <i>*</i></label><input id="f-name" name="name" required autocomplete="name"><div class="err">Please enter your name.</div></div>
+          <div class="field"><label for="f-email">Work email <i>*</i></label><input id="f-email" name="email" type="email" required autocomplete="email"><div class="err">Please enter a valid work email.</div></div>
+          <div class="field"><label for="f-company">Company name <i>*</i></label><input id="f-company" name="company" required autocomplete="organization"><div class="err">Please enter your company.</div></div>
+          <div class="field"><label for="f-role">Job title / role <i>*</i></label><input id="f-role" name="role" required placeholder="CTO, CISO, Head of IT…"><div class="err">Please enter your role.</div></div>
+          <div class="field"><label for="f-phone">Phone number</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-site">Website</label><input id="f-site" name="website" placeholder="company.com"></div>
+          <div class="field full"><label for="f-msg">Requirements</label><textarea id="f-msg" name="message" placeholder="AI governance, spend or compliance needs…"></textarea></div>
+        </div>
+        <div class="form-foot">
+          <button class="btn btn-primary btn-block" type="submit">Request my demo</button>
+          <small>By submitting, you agree to our Privacy Policy. We never share your data.</small>
+        </div>
+      </form>
+      <div class="form-success" aria-live="polite">
+        <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h4>You’re on the list!</h4>
+        <p>Thanks — our team will reach out within one business day to schedule your demo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

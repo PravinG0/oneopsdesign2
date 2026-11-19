@@ -1,0 +1,806 @@
+/* ==========================================================================
+   Curved Rotary Dial Carousel - OneReach Labs Section Design
+   Stack: Vanilla HTML5, Modern CSS3 Custom Properties, Responsive Fluid Layout
+   ========================================================================== */
+
+:root {
+  /* Typography Tokens */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: 'Caveat', cursive, sans-serif;
+
+  /* Card Colors (Pixel-Matched to Loopsii Reference) */
+  --card-cyan: #C23B2E;
+  --card-gold: #7A5C6E;
+  --card-sage: #D4857A;
+  --card-coral: #3A2E35;
+
+  /* Base Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fbfcfd;
+  --bg-stage: #ffffff;
+  --text-main: #191c24;
+  --text-muted: #525a6c;
+  --text-faint: #9aa3b4;
+  --border-light: rgba(25, 28, 36, 0.08);
+  --border-strong: rgba(25, 28, 36, 0.16);
+  --grid-line: rgba(25, 28, 36, 0.035);
+
+  --dial-track-line: rgba(25, 28, 36, 0.1);
+  --dial-tick-default: #202430;
+
+  --btn-bg: #11141d;
+  --btn-text: #ffffff;
+  --btn-hover: #2b3040;
+
+  --card-shadow: 0 16px 38px -10px rgba(0, 0, 0, 0.11), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  --card-radius: 28px;
+  --ticket-height: 250px;
+}
+
+/* OneReach Labs Midnight Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #1F181D;
+  --bg-secondary: #2A2026;
+  --bg-stage: #1F181D;
+  --text-main: #ffffff;
+  --text-muted: #c0cbdf;
+  --text-faint: #7081a8;
+  --border-light: rgba(143, 166, 255, 0.16);
+  --border-strong: rgba(143, 166, 255, 0.28);
+  --grid-line: rgba(143, 166, 255, 0.06);
+
+  --dial-track-line: rgba(143, 166, 255, 0.22);
+  --dial-tick-default: #C23B2E;
+
+  --btn-bg: #C23B2E;
+  --btn-text: #1F181D;
+  --btn-hover: #E07063;
+
+  --card-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.5), 0 0 28px rgba(143, 166, 255, 0.14);
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.5;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==========================================================================
+   Header Navigation
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .site-header {
+  background: rgba(10, 22, 56, 0.88);
+}
+
+.header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+}
+
+.logo-loop {
+  display: inline-flex;
+  vertical-align: middle;
+  color: inherit;
+  margin: 0 1px;
+}
+
+.brand-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--border-light);
+  color: var(--text-muted);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--text-main);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-main);
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--border-light);
+}
+
+[data-theme="light"] .dark-icon { display: none; }
+[data-theme="light"] .light-icon { display: inline-block; }
+[data-theme="dark"] .light-icon { display: none; }
+[data-theme="dark"] .dark-icon { display: inline-block; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-pill {
+  border-radius: 999px;
+}
+
+.btn-primary {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.btn-primary:hover {
+  background: var(--btn-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-outline:hover {
+  background: var(--border-light);
+}
+
+/* ==========================================================================
+   Intro & Outro Sections
+   ========================================================================== */
+
+.intro-section,
+.outro-section {
+  padding: 85px 24px 65px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+
+.intro-title,
+.outro-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.intro-lead,
+.outro-text {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
+.scroll-prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-faint);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.mouse-icon {
+  width: 22px;
+  height: 34px;
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.mouse-wheel {
+  width: 4px;
+  height: 8px;
+  background-color: currentColor;
+  border-radius: 999px;
+  animation: mouseWheelSlide 1.6s infinite ease-in-out;
+}
+
+@keyframes mouseWheelSlide {
+  0% { transform: translateY(0); opacity: 1; }
+  60% { transform: translateY(8px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/* ==========================================================================
+   MAIN ROTARY DIAL SECTION
+   ========================================================================== */
+
+.dial-section {
+  position: relative;
+  /* 380vh scroll track gives full scrubbing headroom */
+  height: 380vh;
+  background: var(--bg-stage);
+}
+
+/* Background Grid & Glowing Wireframe */
+.dial-bg-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-v-grid {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--grid-line) 0,
+    var(--grid-line) 1px,
+    transparent 1px,
+    transparent 140px
+  );
+  opacity: 0.85;
+}
+
+.isometric-wireframe {
+  position: absolute;
+  top: 10%;
+  right: 14%;
+  width: 320px;
+  height: 320px;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 35px rgba(255, 51, 133, 0.22));
+  animation: floatIso 7s ease-in-out infinite alternate;
+}
+
+@keyframes floatIso {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-16px) rotate(2deg); }
+}
+
+.iso-grid-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Pinned Sticky Stage */
+.dial-sticky-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 24px 24px 18px;
+  user-select: none;
+}
+
+/* Upper Stage Header */
+.dial-stage-header {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.dial-kicker {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.dial-progress-counter {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  background: var(--border-light);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+}
+
+.current-phase {
+  color: var(--text-main);
+}
+
+.counter-divider {
+  margin: 0 4px;
+  color: var(--text-faint);
+}
+
+.total-phases {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   The Rotary Viewport & Dial Mechanics
+   ========================================================================== */
+
+.dial-viewport {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  outline: none;
+}
+
+.dial-viewport:active {
+  cursor: grabbing;
+}
+
+.dial-viewport:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--btn-bg);
+  border-radius: 20px;
+}
+
+/* SVG Track with Radial Ticks */
+.dial-track-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Rotating Wheel Carrier */
+.dial-wheel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Card Node (Pinned to wheel along the arc) */
+.dial-card-node {
+  position: absolute;
+  width: 440px;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+  will-change: transform, opacity;
+  transform-origin: 50% var(--ticket-height);
+  transition: opacity 0.2s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+/* Colored Upper Ticket */
+.card-ticket {
+  position: relative;
+  width: 100%;
+  height: var(--ticket-height);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+  z-index: 3;
+}
+
+.dial-card-node:hover .card-ticket {
+  transform: translateY(-3px);
+}
+
+/* Theme Colors */
+.card-cyan { background-color: var(--card-cyan); }
+.card-gold { background-color: var(--card-gold); }
+.card-sage { background-color: var(--card-sage); }
+.card-coral { background-color: var(--card-coral); }
+
+/* Scroll-Driven Parallax Artwork Inside Card */
+.ticket-artwork {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.ticket-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Feature Checklist Under Ticket */
+.card-body {
+  margin-top: 28px;
+  background: transparent;
+  padding: 0 6px;
+}
+
+.feature-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+.checklist-item:last-child {
+  border-bottom: none;
+}
+
+.item-bullet {
+  font-size: 0.75rem;
+  line-height: 1.9;
+  color: var(--text-main);
+  flex-shrink: 0;
+}
+
+.item-text {
+  flex: 1;
+}
+
+/* Active State */
+.dial-card-node.is-active .card-ticket {
+  box-shadow: 0 24px 56px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.45) inset;
+}
+
+.dial-card-node:not(.is-active) {
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   Controls Deck (Pagination & Step Controls)
+   ========================================================================== */
+
+.dial-controls-deck {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  z-index: 10;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-strong);
+  padding: 8px 14px;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .dial-controls-deck {
+  background: var(--bg-secondary);
+}
+
+.dial-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: var(--bg-primary);
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dial-nav-btn:hover:not(:disabled) {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-color: transparent;
+  transform: scale(1.05);
+}
+
+.dial-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.dial-phase-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.phase-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.phase-tab-btn:hover {
+  color: var(--text-main);
+  background: var(--border-light);
+}
+
+.phase-tab-btn.is-active {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.phase-badge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.dial-hint {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 10;
+  margin-top: 4px;
+}
+
+.drag-hint-icon {
+  font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Outro & Footer
+   ========================================================================== */
+
+.outro-section {
+  padding-top: 110px;
+  padding-bottom: 90px;
+}
+
+.outro-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border-light);
+  padding: 30px 24px;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  :root {
+    --ticket-height: 220px;
+  }
+
+  .dial-card-node {
+    width: 380px;
+  }
+
+  .checklist-item {
+    font-size: 0.96rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --ticket-height: 190px;
+    --card-radius: 20px;
+  }
+
+  .header-inner {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .brand-logo {
+    font-size: 1.15rem;
+    white-space: nowrap;
+    gap: 6px;
+  }
+
+  .brand-badge {
+    display: none;
+  }
+
+  .site-header .nav-links {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .theme-label {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    padding: 7px 10px;
+  }
+
+  .btn-pill {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  .dial-card-node {
+    width: 310px;
+  }
+
+  .checklist-item {
+    font-size: 0.88rem;
+    padding: 10px 0;
+  }
+
+  .dial-controls-deck {
+    max-width: 92%;
+    padding: 6px 10px;
+  }
+
+  .phase-tab-btn {
+    padding: 5px 9px;
+    font-size: 0.78rem;
+  }
+
+  .phase-name {
+    display: none;
+  }
+
+  .isometric-wireframe {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .mouse-wheel,
+  .isometric-wireframe {
+    animation: none !important;
+  }
+
+  .dial-wheel,
+  .dial-card-node,
+  .dial-track-svg,
+  .ticket-artwork {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OneOps &mdash; Core Platform Capabilities Horizontal Scroll</title>
+  
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Top Header (OneOps Brand) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-logo" aria-label="OneOps">
+        <img src="oneops-logo.png" alt="OneOps" style="height: 38px; width: auto; object-fit: contain;">
+      </div>
+      <div class="header-links">
+        <a href="#rules-track" class="header-link" style="color: #E07063; border-color: rgba(194, 59, 46, 0.4);">EXPLORE CAPABILITIES</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Top Placeholder Hero (Context before pinning) -->
+    <section class="spacer-section spacer-top">
+      <div class="spacer-content">
+        <p class="section-label" style="color: #E07063;">CORE PLATFORM CAPABILITIES</p>
+        <h1 class="spacer-title">Enterprise Control Over Every AI Model</h1>
+        <p class="spacer-sub">Scroll down to explore the 5 core pillars of OneOps AI Governance & Observability</p>
+        <div class="scroll-indicator">
+          <span>Scroll to explore</span>
+          <div class="scroll-arrow" style="color: #C23B2E;">↓</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pinned Horizontal Scroll Section -->
+    <section class="pinned-section-wrapper" id="rules-track">
+      <div class="pinned-sticky-container">
+        
+        <!-- Repeating Hexagonal / Honeycomb Mesh Background -->
+        <div class="hex-grid-bg" aria-hidden="true"></div>
+
+        <!-- Top Right Equalizer / Controls Icon -->
+        <div class="equalizer-widget" aria-hidden="true">
+          <span class="eq-bar eq-bar-1" style="background: #C23B2E;"></span>
+          <span class="eq-bar eq-bar-2" style="background: #E07063;"></span>
+          <span class="eq-bar eq-bar-3" style="background: #7A5C6E;"></span>
+        </div>
+
+        <!-- Giant Typography Layers ("govern") with Individual Letter Spans -->
+        <div class="giant-word-container" aria-hidden="true">
+          <!-- Base Dark Layer with individual staggered letters -->
+          <div class="giant-word giant-word-base" id="word-base">
+            <span class="char-span" style="--char-i: 0;">g</span>
+            <span class="char-span" style="--char-i: 1;">o</span>
+            <span class="char-span" style="--char-i: 2;">v</span>
+            <span class="char-span" style="--char-i: 3;">e</span>
+            <span class="char-span" style="--char-i: 4;">r</span>
+            <span class="char-span" style="--char-i: 5;">n</span>
+          </div>
+          <!-- Dynamic Crimson Accent Fill Layer (reveals with scroll) -->
+          <div class="giant-word giant-word-reveal" id="word-reveal">
+            <span class="char-span" style="--char-i: 0;">g</span>
+            <span class="char-span" style="--char-i: 1;">o</span>
+            <span class="char-span" style="--char-i: 2;">v</span>
+            <span class="char-span" style="--char-i: 3;">e</span>
+            <span class="char-span" style="--char-i: 4;">r</span>
+            <span class="char-span" style="--char-i: 5;">n</span>
+          </div>
+        </div>
+
+        <!-- Horizontal Sliding Track of Staggered Cards -->
+        <div class="horizontal-track" id="horizontal-track">
+          
+          <!-- Card 1 -->
+          <article class="rule-card card-pos-1">
+            <div class="card-inner">
+              <div class="card-badge">
+                <span class="badge-dot" style="background: #C23B2E;"></span>
+                <span class="badge-text" style="color: #E07063;">PILLAR 01</span>
+              </div>
+              <h2 class="card-title">API KEY VAULT</h2>
+              <p class="card-desc">
+                Centrally store, rotate, and monitor API keys for Claude, Gemini, OpenAI, Bedrock, Groq, Mistral, and 40+ providers. Zero keys scattered across .env files, Notion pages, and Slack threads. Expiry alerts at 14, 7, and 3 days with full audit logging.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="rule-card card-pos-2">
+            <div class="card-inner">
+              <div class="card-badge">
+                <span class="badge-dot" style="background: #C23B2E;"></span>
+                <span class="badge-text" style="color: #E07063;">PILLAR 02</span>
+              </div>
+              <h2 class="card-title">SPEND ATTRIBUTION</h2>
+              <p class="card-desc">
+                Track spending by provider, model, team, and individual employee in real time. Set monthly hard budget caps and eliminate end-of-month invoice shock before it hits. Export granular chargeback reports for finance in seconds.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="rule-card card-pos-3">
+            <div class="card-inner">
+              <div class="card-badge">
+                <span class="badge-dot" style="background: #C23B2E;"></span>
+                <span class="badge-text" style="color: #E07063;">PILLAR 03</span>
+              </div>
+              <h2 class="card-title">MODEL ASSIGNMENT</h2>
+              <p class="card-desc">
+                Assign specific AI models to specific teams with zero code changes. Development gets Claude and Bedrock; Marketing gets Gemini; Sales gets GPT-4o. Auto-provision via Okta/Azure AD and revoke employee access in under 30 seconds.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="rule-card card-pos-4">
+            <div class="card-inner">
+              <div class="card-badge">
+                <span class="badge-dot" style="background: #C23B2E;"></span>
+                <span class="badge-text" style="color: #E07063;">PILLAR 04</span>
+              </div>
+              <h2 class="card-title">PRE-LLM DLP GUARDRAILS</h2>
+              <p class="card-desc">
+                Every prompt is scanned in real time before it reaches external LLMs. Detect 20+ PII types (SSNs, cards, medical records, client IDs) and block or redact automatically. Complete violation logs ensure instant SOC 2, HIPAA, and GDPR audit compliance.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="rule-card card-pos-5">
+            <div class="card-inner">
+              <div class="card-badge">
+                <span class="badge-dot" style="background: #C23B2E;"></span>
+                <span class="badge-text" style="color: #E07063;">PILLAR 05</span>
+              </div>
+              <h2 class="card-title">TEAM CONTEXT & KB</h2>
+              <p class="card-desc">
+                Build a team-specific knowledge base for codebase conventions, brand guidelines, and product specs. OneOps automatically injects relevant context chunks, cutting token costs and eliminating repetitive prompt pasting across all departments.
+              </p>
+            </div>
+          </article>
+
+        </div><!-- /.horizontal-track -->
+      </div><!-- /.pinned-sticky-container -->
+    </section>
+
+    <!-- Bottom Placeholder Spacer Section -->
+    <section class="spacer-section spacer-bottom">
+      <div class="spacer-content">
+        <h2 class="spacer-title" style="font-size: 2.2rem;">End of Core Capabilities</h2>
+        <p class="spacer-sub">Continue scrolling down to explore OneOps extended operational tools</p>
+        <div class="scroll-indicator">
+          <span>Scroll down</span>
+          <div class="scroll-arrow" style="color: #C23B2E;">↓</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
