@@ -773,12 +773,15 @@ input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border-radius
 @media (max-width: 960px) {
   .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: inline-flex; }
+  .nav.open { max-height: 100vh; overflow-y: auto; background: var(--bg); }
+  .nav.open .nav-inner { flex-wrap: wrap; height: auto; min-height: 68px; gap: 0; }
+  .nav.open .logo { height: 68px; }
+  .nav.open .nav-toggle { height: 68px; }
   .nav.open .nav-links, .nav.open .nav-cta {
-    display: flex; flex-direction: column; align-items: stretch;
-    position: absolute; left: 0; right: 0; background: var(--bg); padding: 12px 24px; gap: 4px;
+    display: flex; flex-direction: column; align-items: stretch; width: 100%; gap: 4px;
   }
-  .nav.open .nav-links { top: 68px; border-top: 1px solid var(--line); }
-  .nav.open .nav-cta { top: calc(68px + 196px); border-bottom: 1px solid var(--line); padding-bottom: 20px; box-shadow: 0 20px 30px -20px rgba(0,0,0,.2); }
+  .nav.open .nav-links { order: 3; margin: 0; padding: 8px 0; border-top: 1px solid var(--line); }
+  .nav.open .nav-cta { order: 4; padding: 12px 0 22px; border-top: 1px solid var(--line); }
   .nav.open .nav-links a { padding: 12px 8px; font-size: 16px; }
   .nav.open .nav-cta .btn { width: 100%; }
   .nav.open .nav-cta .login { text-align: center; }
